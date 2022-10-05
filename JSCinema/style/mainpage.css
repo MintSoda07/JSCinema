@@ -1,0 +1,146 @@
+:root{
+    --font-small:8px;
+    --font-medium:14px;
+    --font-large:20px;
+    --font-very-large:28px;
+    --font-banner:60px;
+    --size-normal:100%;
+    --size-samll:60%;
+}
+body{
+    padding: 0%;
+    margin: 0%;
+}
+header{
+    background-color: rgb(71, 71, 71);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 120px;
+    align-items: center;
+}
+#LoginOption{
+    padding-right: 90px;
+    display: inline;
+    text-align: center;
+    justify-content: center;
+}
+#LoginOption>p:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+#Logo{
+    width: 8%;
+    height: 8%;
+}
+#Banner{
+    font-size: var(--font-banner);
+    text-align: center;
+}
+nav{
+    padding-top: 10px;
+}
+#NavigationVar{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    background-color: black;
+    padding:0px;
+}
+.NavButton{
+    color: white;
+    margin: 10px;
+    font-family:Arial;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+}
+.NavButton:hover{
+    cursor: pointer;
+}
+
+/* 영화 소개가 들어갈 컨테이너. */
+.contents{
+    padding-bottom:400px;
+    display: flex;
+    justify-content: space-around;
+    background-image: url("/img/CinemaBackground.jpg");
+    background-size: 1980px;
+    background-repeat:no-repeat;
+    background-position: 0px,-300px;
+}
+
+/* 아직 존재하지 않음. 
+.MovieSlide{
+    width: 100%;
+    height: 50%;
+    max-height: 840px;
+}*/
+
+/* 영화 소개 아이템이 들어갈 곳*/
+.movieChart{
+    border-radius: 5px;
+    display: inline;
+    margin-top: 20px;
+    width: 175px;
+    height: 400px;
+    justify-content: space-around;
+    transition: ease-in-out all 200ms;
+    cursor: pointer;
+    
+}
+/* 영화 소개 아이템 : 호버링 */
+.movieChart:hover{
+    opacity: 60%;
+    
+}
+/* 영화 이름 */
+.movieName{
+    margin-top: 125px;
+    margin-bottom: 0px;
+    font-size: var(--font-very-large);
+    color: white;
+    opacity: 100%;
+}
+/* 영화 설명 */
+.movieDescription{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: white;
+    opacity: 100%;
+}
+/* 영화 설명 */
+.movieDescription{
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: white;
+    opacity: 100%;
+}
+/* 영화 평가 */
+.movieRate{
+    font-size: var(--font-medium);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: gray;
+    opacity: 100%;
+    transition: all ease-in 100ms;
+}
+/*영화 차트 마우스 호버링 텍스트*/
+.movieChartHoveringText{
+    color: white;
+    text-align: center;
+    font-size: var(--font-large);
+    margin-top: 110px;
+    transition: all 200ms ease-in-out;
+    opacity: 0%;
+    
+}
+/*영화가 호버링되면 JS에서 활성화시킬 클래스 hover*/
+.movieChartHoveringText.hover{
+    opacity: 100%;
+}
+/* 영화 순위 1 */
+#Chart1{
+    background-image: url("/img/Maverick.jpg");
+    background-size: 100%;  
+    background-repeat: no-repeat;
+}
