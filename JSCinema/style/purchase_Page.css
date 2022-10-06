@@ -26,6 +26,7 @@ body{
 }
 .Bottom_Tab{
     display: flex;
+    margin-top: 100px;
     justify-content: space-between;
 }
 .Agree_Tab_Container{
@@ -34,12 +35,12 @@ body{
 }
 .Submit_Btn_Container{
     display: flex;
-    padding-right: 50%;
     flex-direction: column;
 }
 .Blank{
     height: 50%;
 }
 #purchase{
-    padding: 50%
+    display: flex;
+    padding: 20px 150px 20px 150px;
 }
