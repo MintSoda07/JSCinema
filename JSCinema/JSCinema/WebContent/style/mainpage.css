@@ -1,0 +1,122 @@
+:root{
+    --font-small:8px;
+    --font-medium:14px;
+    --font-large:20px;
+    --font-very-large:28px;
+    --font-banner:70px;
+    --size-normal:100%;
+    --size-samll:60%;
+}
+body{
+    padding: 0%;
+    margin: 0%;
+}
+header{
+    background-color: rgb(71, 71, 71);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 120px;
+    align-items: center;
+}
+#LoginOption{
+    padding-right: 90px;
+    display: inline;
+    text-align: center;
+    justify-content: center;
+}
+#LoginOption>p:hover{
+    cursor: pointer;
+    font-weight: bold;
+}
+#Logo{
+    width: 8%;
+    height: 8%;
+}
+#Banner{
+    font-size: var(--font-banner);
+    text-align: center;
+}
+nav{
+    padding-top: 10px;
+}
+#NavigationVar{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    background-color: black;
+    padding:0px;
+}
+
+.NavButton{
+    color: #c0c0c0;
+    margin: 10px;
+    font-family:Arial;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    transition: ease-in-out all 700ms;
+}
+.NavButton:hover{
+    cursor: pointer;
+    color:#ffffff;
+    
+}
+
+.contents{
+    padding-bottom:530px;
+    display: flex;
+    justify-content: space-around;
+    background-image: url("../img/CinemaBackground.jpg");
+    background-size: 1980px;
+    background-position: 0px,-300px;
+}
+
+.movieChart{
+    border-radius: 5px;
+    display: inline;
+    margin-top: 20px;
+    width: 175px;
+    height: 270px;
+    justify-content: space-around;
+    transition: ease-in-out all 200ms;
+    cursor: pointer;
+    
+}
+.movieImg{
+	width:100%;
+	height:100%;
+}
+.movieChart:hover{
+    opacity: 60%;
+    
+}
+.movieName{
+	margin-top:1px;
+    margin-bottom: 0px;
+    font-size: var(--font-very-large);
+    color: white;
+    opacity: 100%;
+}
+.movieDescription{
+    margin-top: 4px;
+    margin-bottom: 0px;
+    color: white;
+    opacity: 100%;
+}
+.movieRate{
+    font-size: var(--font-medium);
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: gray;
+    opacity: 100%;
+    transition: all ease-in 100ms;
+}
+form>input{
+	width:100%;
+	height:30px;
+	background-color:rgb(71, 71, 71);
+	color:white;
+	border:none;
+	font-size: 16px;
+	cursor:pointer;
+}

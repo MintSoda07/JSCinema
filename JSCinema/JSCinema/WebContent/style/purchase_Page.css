@@ -1,0 +1,46 @@
+.Personal_Info{
+    margin-bottom:30px;
+}
+.Personal_Info_Container{
+    font-size: 20px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#inputbox{
+    flex-wrap: nowrap;
+}
+input{
+    text-align: center;
+    height: 20px;
+}
+.cash{
+    background-color: white;
+    padding:10px;
+    font-family: sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+body{
+    background-color: gainsboro;
+}
+.Bottom_Tab{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-between;
+}
+.Agree_Tab_Container{
+    display: flex;
+    justify-content: space-between;
+}
+.Submit_Btn_Container{
+    display: flex;
+    flex-direction: column;
+}
+.Blank{
+    height: 50%;
+}
+#purchase{
+    display: flex;
+    padding: 20px 150px 20px 150px;
+}

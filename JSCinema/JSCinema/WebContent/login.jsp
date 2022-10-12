@@ -1,11 +1,13 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ë¡œê·¸ì¸</title>
-    <link rel="stylesheet" href="style/login_Page.css">
+    <title>·Î±×ÀÎ</title>
+    <link rel="stylesheet" href="style/login_Page.css" type="text/css" >
 </head>
 <body>
     <div class="banner">
@@ -15,7 +17,7 @@
     <div class="func">
         <div class="blank"></div>
         <div class="container">
-            <span>íšŒì›ì´ ì•„ë‹ˆì‹ ê°€ìš”?</span><a href><span>íšŒì›ê°€ìž… í•˜ëŸ¬ê°€ê¸°</span></a>
+            <span>È¸¿øÀÌ ¾Æ´Ï½Å°¡¿ä?</span><a href><span>È¸¿ø°¡ÀÔ ÇÏ·¯°¡±â</span></a>
         <form action="">
             <div class="form">
                 <img src="img/JSCLogo.PNG" alt=""><input type="text" name="userId">
@@ -23,16 +25,16 @@
             <div class="form">
                 <img src="img/JSCLogo.PNG" alt=""><input type="password" name="userPassword">
             </div>
-            <input type="submit" value="ë¡œê·¸ì¸" id="submit">
+            <input type="submit" value="·Î±×ÀÎ" id="submit">
         </form>
         </div>
         <div class="blank"></div>
     </div>
-    <!-- ê´‘ê³ ê°€ ë“¤ì–´ì˜¬ ê³¤ê°„-->
+    <!-- ±¤°í°¡ µé¾î¿Ã °ï°£-->
     <div class="AD">
         <img src="" alt="">
     </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <!-- footerê°€ ë“¤ì–´ì˜¬ ê³µê°„-->
+    <!-- footer°¡ µé¾î¿Ã °ø°£-->
     
 </body>
 </html>
