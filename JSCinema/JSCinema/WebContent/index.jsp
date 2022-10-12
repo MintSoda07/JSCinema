@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
     <script src="script/mainpage_Script.js"></script>
     <script src="script/jquery-3.6.1.js"></script>
+    <%!
+    String SignIn_text="로그인";String SignUp_text="회원가입"; 
+	String Movie_text="영화";String Ticket_text="예매";String Snack_text="스낵";String Event_text="이벤트";String Support_text="고객지원";
+    public void change_Lang(String lang){
+    	switch(lang){
+    	case "ko":
+    		SignIn_text="로그인";SignUp_text="회원가입";
+    		Movie_text="영화";Ticket_text="예매";Snack_text="스낵";Event_text="이벤트";Support_text="고객지원";
+    		break;
+    	case "en":
+			SignIn_text="SignIn";SignUp_text="SignUp";
+			Movie_text="Movies";Ticket_text="Tickets";Snack_text="Snacks";Event_text="Events";Support_text="Supports";
+			break;
+    	}
+    }
+    %>
 </head>
 <body>
     <header> <!-- 1100 사이즈부터 최소화 -->
@@ -17,18 +33,18 @@
         <!--<img src="img/JSCLogo.PNG" id="Logo" alt="이미지를 불러올 수 없습니다."> 보류-->
         <div id="Banner">JSCinema</div>
         <form action="login.jsp" id="LoginOption">
-        <input type="submit" id="SignIn" value="로그인"><br>
-        <input type="submit" id="SignUp" value="회원가입">
+        <input type="submit" id="SignIn" value=<%out.print(SignIn_text); %>><br>
+        <input type="submit" id="SignUp" value=<%out.print(SignUp_text); %>>
         </form>
             
     </header>
     
     <nav id="NavigationVar">
-        <span id="Movies" class="NavButton">영화</span>
-        <span id="Tickets" class="NavButton">예매</span>
-        <span id="Snacks" class="NavButton">스낵</span>
-        <span id="Events" class="NavButton">이벤트</span>
-        <span id="Supports" class="NavButton">고객지원</span>
+        <span id="Movies" class="NavButton"><%out.print(Movie_text);%></span>
+        <span id="Tickets" class="NavButton"><%out.print(Ticket_text);%></span>
+        <span id="Snacks" class="NavButton"><%out.print(Snack_text);%></span>
+        <span id="Events" class="NavButton"><%out.print(Event_text);%></span>
+        <span id="Supports" class="NavButton"><%out.print(Support_text);%></span>
     </nav>
     <section class="contents">
         <!-- 아래의 내용은 스크립트 불러오기 실패 시 표시될 내용임 (예시)-->
