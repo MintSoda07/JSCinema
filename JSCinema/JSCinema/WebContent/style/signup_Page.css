@@ -1,0 +1,40 @@
+.signup{
+    width: 360px;
+    height: 620px;
+    margin: auto;
+}
+.banner{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4%;
+}
+.banner>img{
+    width: 100px;
+}
+.banner>span{
+    font-weight: 200;
+    font-size: 50px;
+}
+
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid;
+}
+
+input[type="submit"]{
+    width: 315px;
+    height: 35px;
+    margin-top: 20px;
+}
