@@ -9,7 +9,8 @@
     <title>영화 보기 좋은 곳, JSCinema</title>
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
     <script src="script/mainpage_Script.js"></script>
-    <script src="script/jquery-3.6.1.js"></script>
+    <script src="script/jquery-3.6.1.js"></script>>
+    <% String Page_Locale=request.getParameter("Lo"); %>
     <%!
     String SignIn_text="로그인";String SignUp_text="회원가입"; 
 	String Movie_text="영화";String Ticket_text="예매";String Snack_text="스낵";String Event_text="이벤트";String Support_text="고객지원";
@@ -29,6 +30,7 @@
     	}
     }
     %>
+    <%change_Lang("en"); %>
 </head>
 <body>
 

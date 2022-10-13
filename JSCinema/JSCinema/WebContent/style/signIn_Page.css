@@ -58,6 +58,9 @@ a:hover{
     height: 40px;
     font-size:20px;
 }
+.form>input:invalid{
+	border-color:red;
+}
 #submit{
     margin-top: 10px;
     width: 100%;
