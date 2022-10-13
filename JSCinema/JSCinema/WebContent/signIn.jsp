@@ -17,7 +17,7 @@
     <div class="func">
         <div class="blank"></div>
         <div class="container">
-            <span>회원이 아니신가요?</span><a href="signup.jsp"><span>회원가입 하러가기</span></a>
+            <span>회원이 아니신가요?</span><a href="signUp.jsp"><span>회원가입 하러가기</span></a>
         <form action="">
             <div class="form">
                 <img src="img/JSCLogo.PNG" alt=""><input type="text" name="userId"placeholder="아이디 혹은 이메일 주소">
