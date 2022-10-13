@@ -19,16 +19,7 @@ header{
     padding-left: 120px;
     align-items: center;
 }
-#LoginOption{
-    padding-right: 90px;
-    display: inline;
-    text-align: center;
-    justify-content: center;
-}
-#LoginOption>p:hover{
-    cursor: pointer;
-    font-weight: bold;
-}
+
 #Logo{
     width: 8%;
     height: 8%;
@@ -111,12 +102,23 @@ nav{
     opacity: 100%;
     transition: all ease-in 100ms;
 }
+#AccountForm{
+	padding-right: 120px;
+    display: inline;
+    text-align: center;
+    justify-content: center;
+}
 form>input{
 	width:100%;
 	height:30px;
 	background-color:rgb(71, 71, 71);
-	color:white;
+	color:#999999;
 	border:none;
 	font-size: 16px;
 	cursor:pointer;
+	transition: all ease-in 300ms;
+}
+form>input:hover{
+	cursor: pointer;
+    color:#d1d1d1;
 }
