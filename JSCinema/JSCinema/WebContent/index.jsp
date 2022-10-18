@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,7 +11,7 @@
     <title>영화 보기 좋은 곳, JSCinema</title>
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
     <script src="script/mainpage_Script.js"></script>
-    <script src="script/jquery-3.6.1.js"></script>>
+    <script src="script/jquery-3.6.1.js"></script>
     <% String Page_Locale=request.getParameter("Lo"); %>
     <%!
     String SignIn_text="로그인";String SignUp_text="회원가입"; 
@@ -33,7 +35,7 @@
     <%change_Lang("en"); %>
 </head>
 <body>
-
+	<fmt:setLocale value="ko"/>
     <header> <!-- 1100 사이즈부터 최소화 -->
         <div></div>
         <!--<img src="img/JSCLogo.PNG" id="Logo" alt="이미지를 불러올 수 없습니다."> 보류-->
