@@ -1,12 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+
+<% response.setContentType("text/html"); %>
+<fmt:setLocale value="ja"/>
+<fmt:bundle basename="properties.JSCinema">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>·Î±×ÀÎ</title>
+    <title><fmt:message key="title"/></title>
     <link rel="stylesheet" href="style/signIn_Page.css" type="text/css" >
     <script src="script/jquery-3.6.1.js"></script>
 </head>
@@ -14,12 +21,11 @@
 	function checkLogin(){
 		var userID=$('#userID').val();
 		var userPW=$('#userPassword').val();
-
 		if(userID==""){
-			alert("¾ÆÀÌµð¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			alert("<fmt:message key="loginPage.alert.id"/>");
 			return false;
 		}else if(userPW==""){
-			alert("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			alert("<fmt:message key="loginPage.alert.pwd"/>");
 			return false;
 		}else{
 			$('.mainForm').submit("index.jsp");
@@ -27,31 +33,32 @@
 	}
 </script>
 <body>
-    <div class="banner">
+	<div class="banner">
         <img src="img/JSCLogo.PNG" alt="">
         <span>JSCinema</span>
     </div>
     <div class="func">
         <div class="blank"></div>
         <div class="container">
-            <span>È¸¿øÀÌ ¾Æ´Ï½Å°¡¿ä?</span><a href="signUp.jsp"><span>È¸¿ø°¡ÀÔ ÇÏ·¯°¡±â</span></a>
+            <span><fmt:message key="loginPage.ask"/></span><a href="signUp.jsp"><span><fmt:message key="signup"/></span></a>
         <form action="index.jsp" class="mainForm" method="get">
             <div class="form">
-                <img src="img/JSCLogo.PNG" alt=""><input id="userID" type="text" name="userId"placeholder="¾ÆÀÌµð È¤Àº ÀÌ¸ÞÀÏ ÁÖ¼Ò">
+                <img src="img/JSCLogo.PNG" alt=""><input id="userID" type="text" name="userId"placeholder=<fmt:message key="email"/>>
             </div>
             <div class="form">
-                <img src="img/JSCLogo.PNG" alt=""><input id="userPassword" type="password" name="userPassword"placeholder="ºñ¹Ð¹øÈ£">
+                <img src="img/JSCLogo.PNG" alt=""><input id="userPassword" type="password" name="userPassword"placeholder=<fmt:message key="pwd"/>>
             </div>
-            <input type="button" value="·Î±×ÀÎ" id="submit" onclick="checkLogin()">
+            <input type="button" value=<fmt:message key="signin"/> id="submit" onclick="checkLogin()">
         </form>
         </div>
         <div class="blank"></div>
-    </div>
-    <!-- ±¤°í°¡ µé¾î¿Ã °ï°£-->
+	</div>
+    <!-- ê´‘ê³ ê°€ ë“¤ì–´ì˜¬ ê³¤ê°„-->
     <div class="AD">
         <img src="" alt="">
     </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <!-- footer°¡ µé¾î¿Ã °ø°£-->
+    <!-- footerê°€ ë“¤ì–´ì˜¬ ê³µê°„-->
     
 </body>
+</fmt:bundle>
 </html>
