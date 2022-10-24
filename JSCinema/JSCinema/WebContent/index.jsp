@@ -21,7 +21,16 @@
 </head>
 <body>
     <header> <!-- 1100 사이즈부터 최소화 -->
-        <div></div>
+        <div>
+        <form action="#" id="LangChangeForm">
+        <form class="LangChange">
+        <input type="submit" id="LangKo" value="한국어"><input type="submit" id="LangEn" value="English"><br>
+        </form>
+        <form class="LangChange">
+        <input type="submit" id="LangJa" value="日本語"><input type="submit" id="LangCn" value="中國語"><br>
+        </form>  	
+        </form>
+        </div>
         <!--<img src="img/JSCLogo.PNG" id="Logo" alt="이미지를 불러올 수 없습니다."> 보류-->
         <div id="Banner">JSCinema</div>
         <div id="AccountForm">
