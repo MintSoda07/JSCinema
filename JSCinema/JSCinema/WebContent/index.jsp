@@ -1,11 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="javax.servlet.jsp.jstl.core.Config" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
 
+<%!
+	String language;
+%>
 <% response.setContentType("text/html"); %>
-<fmt:setLocale value="ja"/>
+<fmt:setLocale value="ko" scope="session"/>
+<%
+	language="한국어";
+	try{
+		language=request.getParameter("lang");
+		switch(language){
+		case("한국어"):
+			language="한국어";
+			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("ko","KR") );
+			break;
+		case("English"):
+			language="English";
+			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("en","US") );
+			break;
+		case("日本語"):
+			language="日本語";
+			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("ja","JP") );
+			break;
+		}
+	}catch(Exception e){
+		language="한국어";
+	}	
+%>
 
 <fmt:bundle basename="properties.JSCinema">
 <!DOCTYPE html>
@@ -18,18 +44,18 @@
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
     <script src="script/mainpage_Script.js"></script>
     <script src="script/jquery-3.6.1.js"></script>
+    
 </head>
 <body>
-    <header> <!-- 1100 사이즈부터 최소화 -->
+    <header> <!-- 1100 사이즈부터 최소화(예정) -->
         <div>
-        <form action="#" id="LangChangeForm">
-        <form class="LangChange">
-        <input type="submit" id="LangKo" value="한국어"><input type="submit" id="LangEn" value="English"><br>
+        <div id="LangChangeForm" ><form class="LangChange" action="#">
+        <input type="submit" id="LangKo" value="한국어" name="lang"><input type="submit" id="LangEn" value="English" name="lang">
         </form>
-        <form class="LangChange">
-        <input type="submit" id="LangJa" value="日本語"><input type="submit" id="LangCn" value="中國語"><br>
+        <form class="LangChange" action="#">
+        <input type="submit" id="LangJa" value="日本語" name="lang"><input type="submit" id="LangCn" value="中國語" name="lang">
         </form>  	
-        </form>
+        </div>
         </div>
         <!--<img src="img/JSCLogo.PNG" id="Logo" alt="이미지를 불러올 수 없습니다."> 보류-->
         <div id="Banner">JSCinema</div>
