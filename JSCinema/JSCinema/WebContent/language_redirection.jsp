@@ -22,16 +22,10 @@ case "日本語":
 case "中國語":
 	language="cn";
 	break;
-case "Français":
-	language="fr";
-	break;
-case "Deutsch":
-	language="du";
-	break;
 case "Русский":
 	language="ru";
 	break;
-case "Español":
+case "español":
 	language="es";
 	break;
 default:

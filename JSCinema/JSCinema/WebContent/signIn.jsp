@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="javax.servlet.jsp.jstl.core.Config" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
@@ -28,8 +27,10 @@
 		}else if(userPW==""){
 			alert("<fmt:message key="loginPage.alert.pwd"/>");
 			return false;
-		}else{
+		}else if(true){
 			$('.mainForm').submit("index.jsp");
+		}else{
+			alert("<fmt:message key="pwdcheck.input"/>");
 		}
 	}
 </script>

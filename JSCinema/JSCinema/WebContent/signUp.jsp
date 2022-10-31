@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-        <%@ page import="javax.servlet.jsp.jstl.core.Config" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
@@ -35,9 +34,9 @@
             <input type="email" name="user_email" required="required">
             <label><fmt:message key="pwd"/></label>
             <input type="password" name="user_password" required="required">
-            <label>비밀번호 확인</label>
+            <label><fmt:message key="pwdcheck.input"/></label>
             <input type="password" name="user_password_check" required="required">
-            <input type="submit">
+            <input type="submit" value="<fmt:message key="signup"/>">
         </form>
     </div>
     </div>

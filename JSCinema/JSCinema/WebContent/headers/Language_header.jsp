@@ -40,12 +40,6 @@ if(cookieList!=null){
 		case("cn"):
 			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("cn","CN") );
 			break;
-		case("fr"):
-			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("fr","FR") );
-			break;
-		case("du"):
-			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("du","GE") );
-			break;
 		case("ru"):
 			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("ru","RU") );
 			break;

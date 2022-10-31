@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="javax.servlet.jsp.jstl.core.Config" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
@@ -29,10 +28,7 @@
         <input type="submit" id="LangJa" value="日本語" name="lang"><input type="submit" id="LangCn" value="中國語" name="lang">
         </form> 
         <form class="LangChange" action="language_redirection.jsp">
-        <input type="submit" id="LangFr" value="Français" name="lang"><input type="submit" id="LangGe" value="Deutsch" name="lang">
-        </form>  
-        <form class="LangChange" action="language_redirection.jsp">
-        <input type="submit" id="LangRu" value="Русский" name="lang"><input type="submit" id="LangEs" value="Español" name="lang">
+        <input type="submit" id="LangEs" value="español" name="lang"><input type="submit" id="LangGe" value="Русский" name="lang">
         </form>  	
         </div>
         </div>
