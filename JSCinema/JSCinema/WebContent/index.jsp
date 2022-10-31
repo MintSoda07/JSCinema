@@ -5,37 +5,10 @@
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
 
-<%!
-	String language;
-%>
-<% response.setContentType("text/html"); %>
-<fmt:setLocale value="ko" scope="session"/>
-<%
-	language="한국어";
-	try{
-		language=request.getParameter("lang");
-		switch(language){
-		case("한국어"):
-			language="한국어";
-			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("ko","KR") );
-			break;
-		case("English"):
-			language="English";
-			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("en","US") );
-			break;
-		case("日本語"):
-			language="日本語";
-			Config.set( session, Config.FMT_LOCALE, new java.util.Locale("ja","JP") );
-			break;
-		}
-	}catch(Exception e){
-		language="한국어";
-	}	
-%>
-
-<fmt:bundle basename="properties.JSCinema">
+<%@ include file="/headers/Language_header.jsp"  %>
 <!DOCTYPE html>
 <html lang="ko">
+<fmt:bundle basename="properties.JSCinema">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,11 +22,17 @@
 <body>
     <header> <!-- 1100 사이즈부터 최소화(예정) -->
         <div>
-        <div id="LangChangeForm" ><form class="LangChange" action="#">
+        <div id="LangChangeForm" ><form class="LangChange" action="language_redirection.jsp">
         <input type="submit" id="LangKo" value="한국어" name="lang"><input type="submit" id="LangEn" value="English" name="lang">
         </form>
-        <form class="LangChange" action="#">
+        <form class="LangChange" action="language_redirection.jsp">
         <input type="submit" id="LangJa" value="日本語" name="lang"><input type="submit" id="LangCn" value="中國語" name="lang">
+        </form> 
+        <form class="LangChange" action="language_redirection.jsp">
+        <input type="submit" id="LangFr" value="Français" name="lang"><input type="submit" id="LangGe" value="Deutsch" name="lang">
+        </form>  
+        <form class="LangChange" action="language_redirection.jsp">
+        <input type="submit" id="LangRu" value="Русский" name="lang"><input type="submit" id="LangEs" value="Español" name="lang">
         </form>  	
         </div>
         </div>
@@ -88,6 +67,6 @@
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <p>dss</p>
+    </fmt:bundle>
 </body>
-</fmt:bundle>
 </html>

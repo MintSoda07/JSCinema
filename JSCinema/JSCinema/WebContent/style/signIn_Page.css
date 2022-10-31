@@ -1,16 +1,17 @@
 body{
     display: block;
     justify-content: center;
-    margin:0%
+    margin:0%;
 }
 .banner{
     margin-top: 5%;
     display: flex;
     justify-content: center;
     margin-bottom: 4%;
+    width:100%;
 }
 .banner>img{
-    width: 140px;
+    width: 160px;
 }
 .banner>span{
     font-weight: 200;

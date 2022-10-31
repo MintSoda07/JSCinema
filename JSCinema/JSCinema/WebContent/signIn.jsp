@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ page import="javax.servlet.jsp.jstl.core.Config" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
 
-<% response.setContentType("text/html"); %>
-<fmt:setLocale value="ja"/>
-<fmt:bundle basename="properties.JSCinema">
+<%@ include file="/headers/Language_header.jsp"  %>
 
+<% response.setContentType("text/html"); %>
+<fmt:bundle basename="properties.JSCinema">
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,5 +61,5 @@
     <!-- footer가 들어올 공간-->
     
 </body>
-</fmt:bundle>
 </html>
+</fmt:bundle>
