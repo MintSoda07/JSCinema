@@ -1,11 +1,10 @@
 div{
     border:  1px solid;
-    float: left;
+   
     margin-left: 200px;
     width: 1000px;
     height: 100px;
     display: inline-block;
-    margin-right: 400px;
     justify-content: center;
     display: flex;
     margin-top: 50px;
