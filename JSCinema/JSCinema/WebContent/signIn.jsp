@@ -17,23 +17,7 @@
     <link rel="stylesheet" href="style/signIn_Page.css" type="text/css" >
     <script src="script/jquery-3.6.1.js"></script>
 </head>
-<script type="text/javascript">
-	function checkLogin(){
-		var userID=$('#userID').val();
-		var userPW=$('#userPassword').val();
-		if(userID==""){
-			alert("<fmt:message key="loginPage.alert.id"/>");
-			return false;
-		}else if(userPW==""){
-			alert("<fmt:message key="loginPage.alert.pwd"/>");
-			return false;
-		}else if(true){
-			$('.mainForm').submit("index.jsp");
-		}else{
-			alert("<fmt:message key="pwdcheck.input"/>");
-		}
-	}
-</script>
+
 <body>
 	<div class="banner">
         <img src="img/JSCLogo.PNG" alt="">
@@ -43,14 +27,14 @@
         <div class="blank"></div>
         <div class="container">
             <span><fmt:message key="loginPage.ask"/></span><a href="signUp.jsp"><span><fmt:message key="signup"/></span></a>
-        <form action="index.jsp" class="mainForm" method="get">
+        <form action="LoginCheck_Page.jsp" class="mainForm" method="get">
             <div class="form">
-                <img src="img/JSCLogo.PNG" alt=""><input id="userID" type="text" name="userId"placeholder=<fmt:message key="email"/>>
+                <img src="img/JSCLogo.PNG" alt=""><input id="userID" type="text" name="ID"placeholder=<fmt:message key="email"/> required="required">
             </div>
             <div class="form">
-                <img src="img/JSCLogo.PNG" alt=""><input id="userPassword" type="password" name="userPassword"placeholder=<fmt:message key="pwd"/>>
+                <img src="img/JSCLogo.PNG" alt=""><input id="userPassword" type="password" name="PWD"placeholder=<fmt:message key="pwd"/> required="required">
             </div>
-            <input type="button" value=<fmt:message key="signin"/> id="submit" onclick="checkLogin()">
+            <input type="submit" value=<fmt:message key="signin"/> id="submit">
         </form>
         </div>
         <div class="blank"></div>
