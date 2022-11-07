@@ -20,7 +20,7 @@
     </div>
     <hr>
     <div class="cash" style="display: flex; justify-content: center;">
-        <span>금액: <span>0\</span>
+        <span>금액:</span> <span>0\</span>
     </div>
     <hr>
     <div class="Bottom_Tab">

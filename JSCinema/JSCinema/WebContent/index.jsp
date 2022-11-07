@@ -1,73 +1,68 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+
+<%@ include file="/headers/Language_header.jsp"  %>
 <!DOCTYPE html>
 <html lang="ko">
+<fmt:bundle basename="properties.JSCinema">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿µÈ­ º¸±â ÁÁÀº °÷, JSCinema</title>
+
+    <title><fmt:message key="title"/></title>
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
     <script src="script/mainpage_Script.js"></script>
-    <script src="script/jquery-3.6.1.js"></script>>
-    <% String Page_Locale=request.getParameter("Lo"); %>
-    <%!
-    String SignIn_text="·Î±×ÀÎ";String SignUp_text="È¸¿ø°¡ÀÔ"; 
-	String Movie_text="¿µÈ­";String Ticket_text="¿¹¸Å";String Snack_text="½º³¼";String Event_text="ÀÌº¥Æ®";String Support_text="°í°´Áö¿ø";
-	String Img_Err="ÀÌ¹ÌÁö¸¦ ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù.";
-    public void change_Lang(String lang){
-    	switch(lang){
-    	case "ko":
-    		SignIn_text="·Î±×ÀÎ";SignUp_text="È¸¿ø°¡ÀÔ";
-    		Movie_text="¿µÈ­";Ticket_text="¿¹¸Å";Snack_text="½º³¼";Event_text="ÀÌº¥Æ®";Support_text="°í°´Áö¿ø";
-    		Img_Err="ÀÌ¹ÌÁö¸¦ ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù.";
-    		break;
-    	case "en":
-			SignIn_text="SignIn";SignUp_text="SignUp";
-			Movie_text="Movies";Ticket_text="Tickets";Snack_text="Snacks";Event_text="Events";Support_text="Supports";
-			Img_Err="Failed to load image.";
-			break;
-    	}
-    }
-    %>
-    <%change_Lang("en"); %>
+    <script src="script/jquery-3.6.1.js"></script>
+    
 </head>
 <body>
-
-    <header> <!-- 1100 »çÀÌÁîºÎÅÍ ÃÖ¼ÒÈ­ -->
-        <div></div>
-        <!--<img src="img/JSCLogo.PNG" id="Logo" alt="ÀÌ¹ÌÁö¸¦ ºÒ·¯¿Ã ¼ö ¾ø½À´Ï´Ù."> º¸·ù-->
+    <header> <!-- 1100 ì‚¬ì´ì¦ˆë¶€í„° ìµœì†Œí™”(ì˜ˆì •) -->
+        <div>
+        <div id="LangChangeForm" ><form class="LangChange" action="language_redirection.jsp">
+        <input type="submit" id="LangKo" value="í•œêµ­ì–´" name="lang"><input type="submit" id="LangEn" value="English" name="lang">
+        </form>
+        <form class="LangChange" action="language_redirection.jsp">
+        <input type="submit" id="LangJa" value="æ—¥æœ¬èª" name="lang"><input type="submit" id="LangCn" value="ä¸­åœ‹èª" name="lang">
+        </form> 
+        <form class="LangChange" action="language_redirection.jsp">
+        <input type="submit" id="LangEs" value="espaÃ±ol" name="lang"><input type="submit" id="LangGe" value="Ğ ÑƒÑÑĞºĞ¸Ğ¹" name="lang">
+        </form>  	
+        </div>
+        </div>
+        <!--<img src="img/JSCLogo.PNG" id="Logo" alt="ì´ë¯¸ì§€ë¥¼ ë¶ˆëŸ¬ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤."> ë³´ë¥˜-->
         <div id="Banner">JSCinema</div>
         <div id="AccountForm">
         	<form action="signIn.jsp" id="LoginOption">
-        		<input type="submit" id="SignIn" value=<%out.print(SignIn_text); %>><br>
+        		<input type="submit" id="SignIn" value=<fmt:message key="signin"/>><br>
         	</form>
         	<form action="signUp.jsp" id="LoginOption">
-        		<input type="submit" id="SignUp" value=<%out.print(SignUp_text); %>>
+        		<input type="submit" id="SignUp" value=<fmt:message key="signup"/>>
         	</form>
         </div>
-            
     </header>
-    
     <nav id="NavigationVar">
-        <span id="Movies" class="NavButton"><%out.print(Movie_text);%></span>
-        <span id="Tickets" class="NavButton"><%out.print(Ticket_text);%></span>
-        <span id="Snacks" class="NavButton"><%out.print(Snack_text);%></span>
-        <span id="Events" class="NavButton"><%out.print(Event_text);%></span>
-        <span id="Supports" class="NavButton"><%out.print(Support_text);%></span>
+        <span id="Movies" class="NavButton"><fmt:message key="movie"/></span>
+        <span id="Tickets" class="NavButton"><fmt:message key="ticket"/></span>
+        <span id="Snacks" class="NavButton"><fmt:message key="snack"/></span>
+        <span id="Events" class="NavButton"><fmt:message key="event"/></span>
+        <span id="Supports" class="NavButton"><fmt:message key="support"/></span>
     </nav>
     <section class="contents">
-        <!-- ¾Æ·¡ÀÇ ³»¿ëÀº ½ºÅ©¸³Æ® ºÒ·¯¿À±â ½ÇÆĞ ½Ã Ç¥½ÃµÉ ³»¿ëÀÓ (¿¹½Ã)-->
+        <!-- ì•„ë˜ì˜ ë‚´ìš©ì€ ìŠ¤í¬ë¦½íŠ¸ ë¶ˆëŸ¬ì˜¤ê¸° ì‹¤íŒ¨ ì‹œ í‘œì‹œë  ë‚´ìš©ì„ (ì˜ˆì‹œ)-->
         <%
         for(int count=0;count<6;count++){
         	out.println("<div class=\"movieChart\" id=\"Chart1\">" + System.lineSeparator()+"<img src=\"img/Maverick.jpg\" alt=\"\" class=\"movieImg\">"+ System.lineSeparator()+
-        			"<p class=\"movieName\" >Å¾°Ç: ¸Å¹ö¸¯</p>" + System.lineSeparator()+
-        			"<p class=\"movieDescription\">¿Ã ¿©¸§, ¸Å¹ö¸¯°ú ÇÔ±úÇÏ´Â Â¥¸´ÇÑ °øÁß ¾×¼Ç ¿µÈ­!</p>" + System.lineSeparator()+
-        			"<span class=\"movieRate\">ÆòÁ¡ 4.3 - ¸®ºä 240°³</span>" + System.lineSeparator()+"</div>" );
+        			"<p class=\"movieName\" >íƒ‘ê±´: ë§¤ë²„ë¦­</p>" + System.lineSeparator()+
+        			"<p class=\"movieDescription\">ì˜¬ ì—¬ë¦„, ë§¤ë²„ë¦­ê³¼ í•¨ê¹¨í•˜ëŠ” ì§œë¦¿í•œ ê³µì¤‘ ì•¡ì…˜ ì˜í™”!</p>" + System.lineSeparator()+
+        			"<span class=\"movieRate\">í‰ì  4.3 - ë¦¬ë·° 240ê°œ</span>" + System.lineSeparator()+"</div>" );
         }
         %>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <p>dss</p>
+    </fmt:bundle>
 </body>
 </html>
