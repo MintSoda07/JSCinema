@@ -35,6 +35,30 @@
                 <img src="img/JSCLogo.PNG" alt=""><input id="userPassword" type="password" name="PWD"placeholder=<fmt:message key="pwd"/> required="required">
             </div>
             <input type="submit" value=<fmt:message key="signin"/> id="submit">
+            <%
+            int Err_code;
+            try{
+            	Err_code=Integer.parseInt(request.getParameter("Err_Code"));	
+            	switch(Err_code){
+               	case 0:
+               		out.print("<label id=\"ERR\">"+"로그인 정보가 전달되는 과정에 오류가 발생했습니다."+"</label>");
+               		break;
+               	case 1:
+               		out.print("<label id=\"ERR\">"+"이메일은 40자 이내여야 하며 공백이 포함될 수 없습니다."+"</label>");
+               		break;
+               	case 2:
+               		out.print("<label id=\"ERR\">"+"비밀번호는 40자 이내여야 하며 공백이 포함될 수 없습니다."+"</label>");
+               		break;
+               	case 3:
+               		out.print("<label id=\"ERR\">"+"아이디와 비밀번호가 일치하지 않습니다."+"</label>");
+               		break;
+               	}
+            }catch(Exception e){
+            	out.print("<span style=\"padding:3px;\">이메일과 비밀번호를 입력해 주세요.</span>");
+            }
+           	
+            
+            %>
         </form>
         </div>
         <div class="blank"></div>

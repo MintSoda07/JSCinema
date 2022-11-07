@@ -143,3 +143,23 @@ form>input:hover{
 	cursor:pointer;
 	color:#d1d1d1;
 }
+#userName{
+	font-weight: bold;
+	text-shadow: 2px;
+	color:yellow;
+	font-size:14px;
+}
+#Profile,#Logout{
+	border: none;
+	background-color:none;
+	font-weight: bold;
+}
+#AccountForm{
+	color:white;
+}
+.forms{
+	display:fles;
+}
+#signOut:hover{
+	color:#ff8000;
+}

@@ -49,7 +49,9 @@ if(cookieList!=null){
 		}
 	}catch(Exception e){
 		language="ko";
-	}	
+	}finally{
+		
+	}
 %>
 
 

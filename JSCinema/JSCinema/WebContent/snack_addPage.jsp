@@ -9,12 +9,17 @@
 </head>
 <body>
   <h1>새로운 스낵 추가 중</h1>
-    <div></div>
-    <h1>스낵 이름</h1>
-    <h2>가격 정보 입력</h2>
-    <h2>스낵 상세정보 입력</h2>
-    <input type="button" id="submit"value="확인">
+    <div> 
+    <img alt="" src="">
     <input type="file" id="file" value="스낵 이미지 업로드">
+    </div>    
+   
+    <input type="text" id="title" placeholder="이름을 입력하세요">
+    <input type="text" id="price" placeholder="가격을 입력하세요">
+    <textarea id="information" cols="40" rows="10"placeholder="상세정보를 입력해주세요"></textarea>
+
+    <input type="button" id="submit"value="확인">
+
 
 </body>
 </html>
