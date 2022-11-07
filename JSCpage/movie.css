@@ -1,0 +1,27 @@
+#movie{
+    border:  1px solid;
+    float: left;
+    margin-left: 30px;
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    margin-right: 40px;
+}
+#movierating {
+    width: 300px;
+    display: block;
+}
+#information{
+    width: 300px;
+    display: block;
+}
+#write{
+    margin-top: 50px;
+    width: 300px;
+    display: inline;
+}
+#ticket{
+    margin-left: 30px;
+    width: 400px;
+    display: inline;
+}

@@ -1,0 +1,22 @@
+div{
+    border:  1px solid;
+    float: left;
+    margin-left: 20px;
+    width: 300px;
+    height: 400px;
+    display: inline-block;
+    margin-right: 40px;
+    display: flex;
+    margin-top: 30px;
+    
+}
+#submit{
+    float: right;
+    margin-top: 300px;
+    width: 300px;
+}
+#file{
+    float: right;
+    margin-top: 300px;
+    width: 200px;
+}
