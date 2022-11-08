@@ -1,5 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+
+<%@ include file="/headers/Language_header.jsp"  %>
+
+<fmt:bundle basename="properties.JSCinema">
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,9 +15,11 @@
 <link rel="stylesheet" href="style/eventinformation.css">
 </head>
 <body>
-    <div>¿Ã∫•∆Æ 1</div>
-    <textarea id="information" cols="40" rows="10"placeholder="ªÛºº¡§∫∏∏¶ ¿‘∑¬«ÿ¡÷ººø‰"></textarea>
-    <input type="button" id="event" value="¿Ã∫•∆Æ ¬¸ø©«œ±‚">
+<%@ include file="/headers/NavHeader.jsp" %>
+    <div id= eventadd>Ïù¥Î≤§Ìä∏ 1</div>
+    <textarea id="information" cols="40" rows="10"placeholder="ÏÉÅÏÑ∏Ï†ïÎ≥¥Î•º ÏûÖÎ†•Ìï¥Ï£ºÏÑ∏Ïöî"></textarea>
+    <input type="button" id="event" value="Ïù¥Î≤§Ìä∏ Ï∞∏Ïó¨ÌïòÍ∏∞">
 
 </body>
 </html>
+</fmt:bundle>

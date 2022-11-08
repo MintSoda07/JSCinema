@@ -1,5 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+<%@ include file="/headers/Language_header.jsp" %>
+<fmt:bundle basename="properties.JSCinema">
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +13,16 @@
 <link rel="stylesheet" href="style/movie.css">
 </head>
 <body>
+    <%@ include file="/headers/NavHeader.jsp" %>
  <div id="movie"></div>
-    <label for="movierating">©╣х╜ фРа║</label>
+    <label for="movierating">Л≤│М≥■ М▐┴Л═░</label>
     <textarea id="movierating" cols="40" rows="10"placeholder=""></textarea>
-    <label for="information">©╣х╜ ╩С╪╪а╓╨╦</label>
+    <label for="information">Л≤│М≥■ Л┐│Л└╦Л═∙КЁ╢</label>
     <textarea id="information" cols="40" rows="10"placeholder=""></textarea>
-    <input type="button" id="write" value="(©╧╦еюз юЭ©К) фРа║ юш╪╨го╠Б">
+    <input type="button" id="write" value="(Л≤┬К╖╓Л·░ Л═└Л ╘) М▐┴Л═░ Л·▒Л└╠М∙≤Й╦╟">
     <div></div>
-    <input type="button" id="ticket" value="©╧╦его╠Б">
+    <input type="button" id="ticket" value="Л≤┬К╖╓М∙≤Й╦╟">
 
 </body>
 </html>
+</fmt:bundle>
