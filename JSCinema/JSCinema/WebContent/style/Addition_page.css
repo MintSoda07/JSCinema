@@ -1,0 +1,64 @@
+.add_page{
+	display:flex;
+	padding: 0% 4% 0% 4%;	
+}
+
+#img_preview{
+	min-height: 560px;
+	min-width: 380px;
+	max-height:560px;
+	max-width:380px;
+	background-color: black;
+	border: solid black;
+}
+.add_img{
+	display:block;
+}
+#file_input{
+	border: solid black;
+	background: gray;
+	text-align: center;
+}
+#file_input:hover{
+	border: solid gray;
+	background: white;
+	text-align: center;
+}
+#file{
+	width: 380px;
+}
+.content_container h1{
+	margin-left:4%;
+	margin-bottom:0px;
+}
+.add_items{
+	width:100%;
+	display:block;
+}
+.inputbox>*{
+	text-align: left;
+	font-weight: bold; 
+	border:none;
+}
+#title{
+	font-size: 60px;
+}
+#price{
+	font-size:40px;
+}
+#information{
+	width:100%;
+	font-size:28px;
+}
+#submit{
+	padding-left:20px;
+	padding-right:20px;
+	font-size:20px;
+	font-weight: bold;
+	background-color: black;
+	color:white;
+}
+#submit:hover{
+	background: gray;
+	color:balck;
+}

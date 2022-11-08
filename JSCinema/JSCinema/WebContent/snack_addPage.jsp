@@ -1,25 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+
+<%@ include file="/headers/Language_header.jsp"  %>
 <!DOCTYPE html>
+<fmt:bundle basename="properties.JSCinema">
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
-<link rel="stylesheet" href="style/addmovie.css">
+<title>ìŠ¤ë‚µ ì¶”ê°€</title>
+<link rel="stylesheet" href="style/Addition_page.css">
+    <script src="script/jquery-3.6.1.js"></script>
+<script>
+	function photo(event){
+		var reader = new FileReader();
+		
+		reader.onload = function(event){
+			var img = document.querySelector("#img_preview");
+			img.setAttribute("src", event.target.result);
+		};
+		reader.readAsDataURL(event.target.files[0]);
+	}
+	</script>
 </head>
 <body>
-  <h1>»õ·Î¿î ½º³¼ Ãß°¡ Áß</h1>
-    <div> 
-    <img alt="" src="">
-    <input type="file" id="file" value="½º³¼ ÀÌ¹ÌÁö ¾÷·Îµå">
-    </div>    
+<%@ include file="/headers/NavHeader.jsp"  %>
+<form action="snackDBCheckPage.jsp">
+<div class="content_container">
+
+<h1>ìƒˆë¡œìš´ ìŠ¤ë‚µ ì¶”ê°€ ì¤‘</h1>
+<div class="add_page">
+ 	
+    <div class="add_img"> 
+    <img alt="" src="" id="img_preview">
+    <div id="file_input"><input type="file" id="file" name="file" value="ìŠ¤ë‚µ ì´ë¯¸ì§€ ì—…ë¡œë“œ" onchange="photo(event);" required="required" ></div>
+    </div>   
+    
+    <div class="add_items" style="margin-left:30px;">
+    
+    <div class="inputbox"><input name="title" type="text" id="title" placeholder="ìŠ¤ë‚µì˜ ì´ë¦„ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”." required="required"></div>
+    <div class="inputbox"><input name="price" type="text" id="price" placeholder="ìŠ¤ë‚µì˜ ê°€ê²©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”." required="required"></div>
+    <div class="inputbox"><textarea name="infomation" id="information" cols="140" rows="14" placeholder="ìŠ¤ë‚µ ìƒì„¸ì •ë³´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”." required="required" ></textarea></div>
+
+    <div style="text-align:right;"><input type="submit" id="submit" value="í™•ì¸"></div>
+    </div>
    
-    <input type="text" id="title" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä">
-    <input type="text" id="price" placeholder="°¡°ÝÀ» ÀÔ·ÂÇÏ¼¼¿ä">
-    <textarea id="information" cols="40" rows="10"placeholder="»ó¼¼Á¤º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä"></textarea>
-
-    <input type="button" id="submit"value="È®ÀÎ">
+    
 
 
+</div>
+ </div>
+ </form>
 </body>
 </html>
+</fmt:bundle>
