@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
+<%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
+
+<%@ include file="/headers/Language_header.jsp"  %>
+<fmt:bundle basename="properties.JSCinema">
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="/headers/NavHeader.jsp" %>
 <script>
 	function photo(event){
 		var reader = new FileReader();
@@ -21,13 +28,14 @@
 	}
 	</script>
 <form>
-<p>Á¦¸ñ : <input type="text"></p>
-<p>³»¿ë</p>
+<p>ì œëª© : <input type="text"></p>
+<p>ë‚´ìš©</p>
  <textarea rows="5" cols="40" name="content" placeho></textarea>
-<p>ÀÌ¹ÌÁö <input type="file" name="image" id="image" onchange="photo(event);"></p>
-<input type="submit" value="¾÷·Îµå">
+<p>ì´ë¯¸ì§€ <input type="file" name="image" id="image" onchange="photo(event);"></p>
+<input type="submit" value="ì—…ë¡œë“œ">
 <div id="image_container"></div>
 </form>					
 
 </body>
 </html>
+</fmt:bundle>

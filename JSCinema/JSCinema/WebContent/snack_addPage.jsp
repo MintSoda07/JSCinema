@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,17 +8,18 @@
 <link rel="stylesheet" href="style/addmovie.css">
 </head>
 <body>
-  <h1>»õ·Î¿î ½º³¼ Ãß°¡ Áß</h1>
+ <%@ include file="/headers/NavHeader.jsp" %>
+  <h1>ìƒˆë¡œìš´ ìŠ¤ë‚µ ì¶”ê°€ ì¤‘</h1>
     <div> 
     <img alt="" src="">
-    <input type="file" id="file" value="½º³¼ ÀÌ¹ÌÁö ¾÷·Îµå">
+    <input type="file" id="file" value="ìŠ¤ë‚µ ì´ë¯¸ì§€ ì—…ë¡œë“œ">
     </div>    
    
-    <input type="text" id="title" placeholder="ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä">
-    <input type="text" id="price" placeholder="°¡°ÝÀ» ÀÔ·ÂÇÏ¼¼¿ä">
-    <textarea id="information" cols="40" rows="10"placeholder="»ó¼¼Á¤º¸¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä"></textarea>
+    <input type="text" id="title" placeholder="ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš”">
+    <input type="text" id="price" placeholder="ê°€ê²©ì„ ìž…ë ¥í•˜ì„¸ìš”">
+    <textarea id="information" cols="40" rows="10"placeholder="ìƒì„¸ì •ë³´ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”"></textarea>
 
-    <input type="button" id="submit"value="È®ÀÎ">
+    <input type="button" id="submit"value="í™•ì¸">
 
 
 </body>

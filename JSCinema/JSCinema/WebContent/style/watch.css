@@ -1,0 +1,91 @@
+h1{
+    text-align: center;
+}
+#table{
+    border: solid 1px;
+    width: 1000px;
+    height: 600px;
+    position: absolute;
+    left: 25%;
+    top: 10%;
+}
+#year{
+    width: 250px;
+    height: 50px;
+    border: solid 1px;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+    
+}
+
+
+#time{
+    width: 500px;
+    height: 50px;
+    border: solid 1px;
+    text-align: center;
+    display: inline-block;
+
+}
+#person{
+    width: 230px;
+    height: 50px;
+    border: solid 1px;
+    text-align: center;
+    display: inline-block;
+}
+#number{
+    width: 250px;
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+}
+#schedule{
+        width: 500px;
+        height: 400px;
+        margin-left: 5px;
+        text-align: center;
+        display: inline-block;
+}
+button{
+    width: 100px;
+    height: 100px;
+}
+#price{
+    width: 200px;
+    height: 200px;
+    margin-left: 5px;
+    
+    text-align: center;
+    display: inline-block;
+
+}
+p{
+    word-spacing: 55px;
+}
+#date{
+    width: 200px;
+    height: 200px;
+    margin-left: 5px;
+    
+    text-align: center;
+    display: inline-block;
+
+}
+#dd{
+    width: 200px;
+    height: 200px;
+    margin-left: 200px;
+    text-align: center;
+    display: inline-block;
+}
+#per{
+    width: 200px;
+    height: 200px;
+    margin-left: 150px;
+    margin-top: 50px;
+    text-align: center;
+    display: inline-block;
+}
