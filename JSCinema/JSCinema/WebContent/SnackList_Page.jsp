@@ -1,3 +1,6 @@
+<%@page import="javax.imageio.ImageIO"%>
+<%@page import="java.awt.image.BufferedImage"%>
+<%@page import="java.io.InputStream"%>
 <%@page import="java.io.FileOutputStream"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -33,14 +36,14 @@ try {
 for(int count=0;count<4 && rs.next();count++){
 	String title=rs.getString("NAME");
 	int price=rs.getInt("PRICE");
-	Blob img=rs.getBlob("IMG");
-
-	out.println("<div class=\"movieChart\" id=\"Chart1\">" + System.lineSeparator()+"<img src=\""+src+"\" alt=\"\" class=\"movieImg\">"+ System.lineSeparator()+
+	Blob 
+	out.println("<div class=\"movieChart\" id=\"Chart1\">" + System.lineSeparator()+"<img src=\""+str+"\" alt=\"\" class=\"movieImg\">"+ System.lineSeparator()+
 			"<p class=\"movieName\" >"+title+"</p>" + System.lineSeparator()+
 			"<p class=\"movieDescription\">"+price+"</p>");
 /* 			"<span class=\"movieRate\">평점 4.3 - 리뷰 240개</span>" + System.lineSeparator()+"</div>" ); */
 }
 } catch (Exception e) {
+	out.print(e);
 } finally {
 
 }

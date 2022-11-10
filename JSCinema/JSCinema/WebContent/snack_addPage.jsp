@@ -27,7 +27,7 @@
 </head>
 <body>
 <%@ include file="/headers/NavHeader.jsp"  %>
-<form action="snackDBCheckPage.jsp">
+<form action="snackDBCheckPage.jsp" method="post" enctype="multipart/form-data">
 <div class="content_container">
 
 <h1>새로운 스낵 추가 중</h1>
