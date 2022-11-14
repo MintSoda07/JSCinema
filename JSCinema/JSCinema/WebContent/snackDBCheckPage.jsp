@@ -1,3 +1,4 @@
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="org.apache.commons.fileupload.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -23,30 +24,49 @@
 <%
 	Connection con = null;
 	PreparedStatement ps = null;   
+	String realFolder = "C:\\Users\\USER\\Documents\\GitHub\\JSCinema\\JSCinema\\JSCinema\\WebContent\\upload";
+
+	String saveFolder = "fileSave"; // out폴더에 fileSave 폴더 생성
+	String encType = "utf-8";
+	int maxSize = 5*1024*1024; // 최대 업로드 5mb
+	ServletContext context = request.getServletContext();
+	MultipartRequest multi = null;
 	
-	String title=request.getParameter("title");
-	String price=request.getParameter("price");
-	String info=request.getParameter("infomation"); // 값 DB로 넘기기 
+	multi = new MultipartRequest(request, realFolder, maxSize, encType, new DefaultFileRenamePolicy());
 	
-	String file_path="C:\\Users\\USER\\AppData\\Roaming\\JSC\\Snacks";
+	String title=multi.getParameter("title");
+	String price=multi.getParameter("price");
+	String info=multi.getParameter("infomation"); // 값 DB로 넘기기 
+	   
+    Enumeration files = multi.getFileNames();
+    String name = (String) files.nextElement();
+    
+    String file_name = multi.getFilesystemName(name);
+	int numPrice =  Integer.valueOf(price).intValue();
+	
+	
+	String file_path="C:\\Users\\USER\\Documents\\GitHub\\JSCinema\\JSCinema\\JSCinema\\WebContent\\upload";
 	DiskFileUpload upload = new DiskFileUpload();
 	List items = upload.parseRequest(request);
 	Iterator params = items.iterator();
+	FileItem fileItem=null;
 	while(params.hasNext()){
-		FileItem fileItem  =(FileItem)params.next();
+		fileItem  =(FileItem)params.next();
+		file_name=fileItem.getName();
 		if(!fileItem.isFormField()){
 			fileName=fileItem.getName();
 			fileName = fileName.substring(fileName.lastIndexOf("\\")+1);
 			File file= new File(file_path+"/"+fileName);
-			fileItem.write(file);
+			try{
+				fileItem.write(file);
+			}catch(Exception e){
+				
+			}
+			
 		}
 		
 	}
-
-	if(title==null||price==null||info==null){
-		request.setAttribute("ERR", new String("1"));
-		pageContext.forward("/Upload_ErrorPages/UploadFailed.jsp");
-	}else{   
+	
 		     try {
 		      Class.forName("oracle.jdbc.driver.OracleDriver");
 		      String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
@@ -56,19 +76,19 @@
 		      Blob img_blobData = con.createBlob();
 		      ps = con.prepareStatement(sql);
 		      ps.setString(1, title);
-		      ps.setInt(2, Integer.parseInt(price));
+		      ps.setInt(2, numPrice);
 		      ps.setString(3, info);
-		      ps.setString(4, fileName);
+		      ps.setString(4, file_name);
 		      ps.setInt(5, 0); 
 		      int r = ps.executeUpdate();
 		      pageContext.forward("index.jsp");
 			  } catch (Exception e) {
-				   throw e;
+				  out.print(e.getClass().getName());
+				  out.print(title+","+numPrice+","+info+","+file_name);
 		 	  } finally {
 		  	
 		  	  if (ps != null) try { ps.close(); } catch (Exception e) {}  
 		  	  if (con != null) try { con.close(); } catch (Exception e) {}
-		  }
 	
 	}
 		%>

@@ -16,6 +16,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<!--  CSS 추가바람! -->
 </head>
 <body>
 <div> 검색 창 들어올 공간</div>
@@ -25,19 +26,20 @@
 Connection con = null;
 PreparedStatement ps = null;
 ResultSet rs = null;
+String default_Path="http://localhost:3000/JSCinema/upload/";
 try {
  Class.forName("oracle.jdbc.driver.OracleDriver");
  String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
  con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
- String sql = "SELECT NAME,PRICE,IMG FROM SNACK ORDER BY NAME";
+ String sql = "SELECT NAME,PRICE,IMG_PATH FROM SNACK ORDER BY NAME";
 
  ps = con.prepareStatement(sql);
  rs = ps.executeQuery();
 for(int count=0;count<4 && rs.next();count++){
 	String title=rs.getString("NAME");
 	int price=rs.getInt("PRICE");
-	Blob 
-	out.println("<div class=\"movieChart\" id=\"Chart1\">" + System.lineSeparator()+"<img src=\""+str+"\" alt=\"\" class=\"movieImg\">"+ System.lineSeparator()+
+	String realPath=rs.getString("IMG_PATH");
+	out.println("<div class=\"movieChart\" id=\"Chart1\">" + System.lineSeparator()+"<img src=\"" + default_Path.trim()+realPath.trim()+ "\" alt=\"IMG_NOT_FOUND\" class=\"movieImg\"/>"+ System.lineSeparator()+
 			"<p class=\"movieName\" >"+title+"</p>" + System.lineSeparator()+
 			"<p class=\"movieDescription\">"+price+"</p>");
 /* 			"<span class=\"movieRate\">평점 4.3 - 리뷰 240개</span>" + System.lineSeparator()+"</div>" ); */

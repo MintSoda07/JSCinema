@@ -41,10 +41,10 @@
     <div class="add_items" style="margin-left:30px;">
     
     <div class="inputbox"><input name="title" type="text" id="title" placeholder="스낵의 이름을 입력해주세요." required="required"></div>
-    <div class="inputbox"><input name="price" type="text" id="price" placeholder="스낵의 가격을 입력해주세요." required="required"></div>
+    <div class="inputbox"><input name="price" type="number" id="price" placeholder="스낵의 가격을 입력해주세요." required="required"></div>
     <div class="inputbox"><textarea name="infomation" id="information" cols="140" rows="14" placeholder="스낵 상세정보를 입력해주세요." required="required" ></textarea></div>
-
-    <div style="text-align:right;"><input type="submit" id="submit" value="확인"></div>
+    <div style="text-align:right;">
+    <input type="submit" id="submit" value="확인"></div>
     </div>
    
     
