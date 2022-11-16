@@ -71,7 +71,6 @@ nav{
     justify-content: space-around;
     transition: ease-in-out all 200ms;
     cursor: pointer;
-    
 }
 .movieImg{
 	width:100%;

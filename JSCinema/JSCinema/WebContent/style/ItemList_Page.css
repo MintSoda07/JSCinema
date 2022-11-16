@@ -1,0 +1,40 @@
+.contents_List{
+	padding-bottom:530px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+    background-color: black;
+    background-size: 1980px;
+    background-position: 0px,-300px;
+}
+#ChartItem{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 20px;
+}
+.movieChart_listItem{
+    border-radius: 5px;
+    display: inline;
+    margin-top: 20px;
+    width: 275px;
+    height: 375px;
+    justify-content: space-around;
+    transition: ease-in-out all 200ms;
+    cursor: pointer;
+}
+.movieChart_listItem:hover{
+    opacity: 60%;
+}
+.list_title{
+	display: flex;
+	font-size: 20px;
+	justify-content: space-between;
+	color:yellow;	
+}
+.list_title div{
+	width: 50px;
+	color:white;
+}
+.list_title div:hover{
+	color:yellow;
+}

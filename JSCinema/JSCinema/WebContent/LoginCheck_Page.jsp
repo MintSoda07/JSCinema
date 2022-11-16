@@ -32,7 +32,7 @@
 		      Class.forName("oracle.jdbc.driver.OracleDriver");
 		      String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
 		      con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
-		      String sql = "SELECT ID,PWD,NAME FROM CUSTOMER ORDER BY ID";
+		      String sql = "SELECT ID,PWD,NAME,MANAGER FROM CUSTOMER ORDER BY ID";
 	
 		      ps = con.prepareStatement(sql);
 		      rs = ps.executeQuery();
@@ -42,6 +42,9 @@
 		    		  session.setAttribute("UserID", ID);
 		    		  session.setAttribute("UserPWD", PWD);
 		    		  session.setAttribute("UserName", rs.getString("NAME"));
+		    		  if(rs.getString("MANAGER").equals("Y")){
+		    			  session.setAttribute("Manager", rs.getString("MANAGER"));
+		    		  }
 		    	  }
 		     }
 		 } catch (Exception e) {

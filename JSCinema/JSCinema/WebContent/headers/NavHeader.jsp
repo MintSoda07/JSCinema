@@ -10,7 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
-    
+    <script>
+    	function move_to_snack() {
+    		location.href="SnackList_Page.jsp";
+		}
+    </script>
 </head>
 <body>
 <header> <!-- 1100 사이즈부터 최소화(예정) -->
@@ -34,6 +38,13 @@
         if(session.getAttribute("UserID")!=null){
         	login=true;
         }
+        boolean IsManager=false;
+        try{
+        	
+        	IsManager=session.getAttribute("Manager").equals("Y");
+        	}catch(Exception e){
+        		IsManager=false;
+        	}
         %>
         	<!--  login  -->
         	<form action="signIn.jsp" id="LoginOption" <% if(login) out.print("style=\"display:none;\""); %>>
@@ -43,8 +54,16 @@
         		<input type="submit" id="SignUp" value=<fmt:message key="signup"/><% if(login) out.print("display=\"none\";"); %>>
         	</form>
         	
+        	
         	<!--  not log in -->
-        	<p id="userName" <% if(!login) out.print("style=\"display:none;\""); %>><%if(login)out.print(session.getAttribute("UserName")+" 님 환영합니다."); %></p>
+        	<p id="userName" <% if(!login) out.print("style=\"display:none;\""); %>><% if(login){
+        		if(IsManager){
+        			out.print("관리자 "+session.getAttribute("UserName")+" 님");
+        		}else{
+        			out.print(session.getAttribute("UserName")+" 님 환영합니다.");
+        		}
+        	}
+        		%></p>
         	<div class="forms" <% if(!login) out.print("style=\"display:none;\""); %>>
         	<form action="#" <% if(!login) out.print("style=\"display:none;\""); %>>
         		<input type="submit" id="profile" value="프로필" <% if(!login) out.print("style=\"display:none;\""); %>>
@@ -57,8 +76,8 @@
     </header>
     <nav id="NavigationVar">
         <span id="Movies" class="NavButton"><fmt:message key="movie"/></span>
-        <span id="Tickets" class="NavButton"><fmt:message key="ticket"/></span>
-        <span id="Snacks" class="NavButton"><fmt:message key="snack"/></span>
+        <span id="Tickets" class="NavButton" onclick=""><fmt:message key="ticket"/></span>
+        <span id="Snacks" class="NavButton" onclick="move_to_snack()"><fmt:message key="snack"/></span>
         <span id="Events" class="NavButton"><fmt:message key="event"/></span>
         <span id="Supports" class="NavButton"><fmt:message key="support"/></span>
     </nav>

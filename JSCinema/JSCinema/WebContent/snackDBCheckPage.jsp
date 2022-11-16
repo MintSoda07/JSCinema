@@ -81,7 +81,8 @@
 		      ps.setString(4, file_name);
 		      ps.setInt(5, 0); 
 		      int r = ps.executeUpdate();
-		      pageContext.forward("index.jsp");
+		      response.sendRedirect("SnackList_Page.jsp");
+			  return;
 			  } catch (Exception e) {
 				  out.print(e.getClass().getName());
 				  out.print(title+","+numPrice+","+info+","+file_name);
