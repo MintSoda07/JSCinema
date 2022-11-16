@@ -16,10 +16,10 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" href="style/ItemList_Page.css" type="text/css" >
+<link rel="stylesheet" href="style/ItemList_Page.css?ver=2" type="text/css" >
 <script>
 	function move_to_info(clicked_id) {
-		var url="snack_showPage.jsp?"+clicked_id;
+		var url="snack_showPage.jsp?img="+clicked_id;
 		location.href=url;
 	}
 </script>
@@ -57,7 +57,7 @@ try {
 
  ps = con.prepareStatement(sql);
  rs = ps.executeQuery();
-for(int count=0;count<4 && rs.next();count++){
+while(rs.next()){
 	String title=rs.getString("NAME");
 	int price=rs.getInt("PRICE");
 	String realPath=rs.getString("IMG_PATH");

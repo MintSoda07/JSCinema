@@ -6,6 +6,7 @@
     background-color: black;
     background-size: 1980px;
     background-position: 0px,-300px;
+    margin-bottom:30px;
 }
 #ChartItem{
 	margin-left: 30px;
@@ -21,6 +22,9 @@
     justify-content: space-around;
     transition: ease-in-out all 200ms;
     cursor: pointer;
+    margin-left:40px;
+    margin-right:40px;
+    margin-bottom:80px;
 }
 .movieChart_listItem:hover{
     opacity: 60%;
