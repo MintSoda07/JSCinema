@@ -44,7 +44,6 @@
     String file_name = multi.getFilesystemName(name);
 	int numPrice =  Integer.valueOf(price).intValue();
 	
-	
 	String file_path="C:\\Users\\USER\\Documents\\GitHub\\JSCinema\\JSCinema\\JSCinema\\WebContent\\upload";
 	DiskFileUpload upload = new DiskFileUpload();
 	List items = upload.parseRequest(request);

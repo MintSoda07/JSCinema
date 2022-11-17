@@ -24,7 +24,7 @@
     cursor: pointer;
     margin-left:55px;
     margin-right:40px;
-    margin-bottom:80px;
+    margin-bottom:100px;
 
 }
 .movieChart_listItem:hover{
@@ -74,4 +74,12 @@
 }
 body{
 	background-color: black;
+}
+.removeItem{
+	display: none;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	color:red;
+	border: 1px solid red;
 }

@@ -35,7 +35,7 @@
  	
     <div class="add_img"> 
     <img alt="" src="" id="img_preview">
-    <div id="file_input"><input type="file" id="file" name="file" value="스낵 이미지 업로드" onchange="photo(event);" required="required" ></div>
+    <div id="file_input"><input type="file" id="file" name="file" value="영화 이미지 업로드" onchange="photo(event);" required="required" ></div>
     </div>   
     
     <div class="add_items" style="margin-left:30px;">
