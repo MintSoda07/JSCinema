@@ -27,7 +27,7 @@
 </head>
 <body>
 <%@ include file="/headers/NavHeader.jsp"  %>
-<form action="snackDBCheckPage.jsp" method="post" enctype="multipart/form-data">
+<form action="movieDBCheckPage.jsp" method="post" enctype="multipart/form-data">
 <div class="content_container">
 
 <h1>새로운 영화 추가 중</h1>
@@ -41,10 +41,22 @@
     <div class="add_items" style="margin-left:30px;">
     
     <div class="inputbox"><input name="title" type="text" id="title" placeholder="영화의 이름을 입력해주세요." required="required"></div>
-    <div class="inputbox" style="width:100%;"><input name="price" type="text" id="price" placeholder="간단한 소개를 입력해주세요." required="required"></div>
+    <div class="inputbox" style="width:100%;"><input name="simple_info" type="text" id="price" placeholder="간단한 소개를 입력해주세요." required="required"></div>
     <div class="inputbox"><textarea name="infomation" id="information" cols="140" rows="14" placeholder="영화 상세정보를 입력해주세요." required="required" ></textarea></div>
+    <div class="inputbox" style="width:50%; text-align:left;">
+	<span style="color:gray; font-size:18px;">장르 분류 :</span><select style="color:REd; font-size:18px;" name="genre">
+	<option value="액션" style="color:black; font-weight:bold;">액션</option>
+      <option value="스릴러" style="color:black; font-weight:bold;">스릴러</option>
+      <option value="호러" style="color:black; font-weight:bold;">호러</option>
+      <option value="멜로" style="color:black; font-weight:bold;">멜로</option>
+      <option value="코미디" style="color:black; font-weight:bold;">코미디</option>
+      <option value="사극" style="color:black; font-weight:bold;">사극</option>
+      <option value="판타지" style="color:black; font-weight:bold;">판타지</option>
+      <option value="뮤지컬" style="color:black; font-weight:bold;">뮤지컬</option>
+      </select>
+    </div>
     <div style="text-align:right;">
-    <input type="submit" id="submit" value="다음 - 상영시간 설정하기"></div>
+    <input type="submit" id="submit" value="영화 정보 업로드"></div>
     </div>
    
     

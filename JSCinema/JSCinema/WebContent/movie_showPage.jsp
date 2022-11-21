@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="java.sql.*"%>
+    <%@ page import="java.util.Date.*"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
@@ -11,7 +12,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>스낵 상세정보</title>
+<title>영화 상세정보</title>
 <link rel="stylesheet" href="style/Addition_page.css">
     <script src="script/jquery-3.6.1.js"></script>
 </head>
@@ -22,9 +23,9 @@
 <div class="content_container">
 <%
 String name="err";
-int price=0;
 String info="err";
 String path="";
+java.sql.Date sql_date=null;
 
 
 Connection con = null;
@@ -35,18 +36,19 @@ try {
  Class.forName("oracle.jdbc.driver.OracleDriver");
  String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
  con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
- String sql = "SELECT NAME,PRICE,INFO,IMG_PATH FROM SNACK WHERE IMG_PATH=\'"+request.getParameter("img")+"\'";
+ String sql = "SELECT NAME,INFOMATION,OPEN_DATE,IMG_PATH FROM MOVIE WHERE IMG_PATH=\'"+request.getParameter("img")+"\'";
 
  ps = con.prepareStatement(sql);
  rs = ps.executeQuery();
  while(rs.next()){
 	 name=rs.getString("NAME");
-	 price=rs.getInt("PRICE");
-	 info=rs.getString("INFO");
+	 sql_date=rs.getDate("OPEN_DATE");
+	 info=rs.getString("INFOMATION");
 	 path=rs.getString("IMG_PATH");
  }
 } catch (Exception e) {
-	out.print(e);
+	out.print(request.getParameter("img"));
+	out.print(sql_date.toString());
 } finally {
 }
 if (rs != null)  try { rs.close(); } catch (Exception e) {}
@@ -60,8 +62,9 @@ if (con != null) try { con.close(); } catch (Exception e) {}
     </div>   
     
     <div class="add_items" style="margin-left:30px;">
-    	<div class="inputbox" style="font-size: 50px; margin-top:0px; color:white;" margin-bottom:5px;><p id="snack_title" style="margin-top:0px;"><%=name%></p></div><hr>
-    	<div class="inputbox" style="font-size: 30px; margin-top:2px; color:yellow;"><p id="snack_price"></p><%=price+"\\"%></div>
+    	<div class="inputbox" style="font-size: 50px; margin-top:0px; color:white;" margin-bottom:0px;><p id="snack_title" style="margin-top:0px;"><%=name%></p></div>
+    	<div class="inputbox" style="font-size: 30px; margin-top:0px; color:yellow;"><p id="snack_price"><%= (sql_date.toString()+"일 개봉") %></p></div>
+    	<hr>
     	<div class="inputbox" style="font-size: 20px; margin-top:15px; color:white;"><p id="snack_information" ><%=info%></p></div>
     </div>
    

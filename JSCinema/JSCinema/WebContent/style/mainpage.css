@@ -28,6 +28,9 @@ header{
     font-size: var(--font-banner);
     text-align: center;
 }
+#Banner:hover{
+	cursor:pointer;
+}
 nav{
     padding-top: 10px;
 }

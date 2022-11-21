@@ -20,7 +20,7 @@ try {
  Class.forName("oracle.jdbc.driver.OracleDriver");
  String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
  con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
- String sql = "DELETE FROM SNACK WHERE IMG_PATH='"+request.getParameter("img")+"'";
+ String sql = "DELETE FROM MOVIE WHERE IMG_PATH='"+request.getParameter("img")+"'";
 
  ps = con.prepareStatement(sql);
  rs = ps.executeQuery();
@@ -36,7 +36,7 @@ if (rs != null)  try { rs.close(); } catch (Exception e) {}
 if (ps != null) try { ps.close(); } catch (Exception e) {}  
 if (con != null) try { con.close(); } catch (Exception e) {}
 }
-response.sendRedirect("SnackList_Page.jsp");
+response.sendRedirect("MovieList_Page.jsp");
 %>
 	
 </body>

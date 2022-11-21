@@ -11,6 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/mainpage.css?ver=1" type="text/css" >
     <script>
+    function index_logo() {
+		location.href="index.jsp";
+	}
+    function move_to_movie() {
+		location.href="MovieList_Page.jsp";
+	}
     	function move_to_snack() {
     		location.href="SnackList_Page.jsp";
 		}
@@ -31,7 +37,7 @@
         </div>
         </div>
         <!--<img src="img/JSCLogo.PNG" id="Logo" alt="이미지를 불러올 수 없습니다."> 보류-->
-        <div id="Banner">JSCinema</div>
+        <div id="Banner" onclick="index_logo()">JSCinema</div>
         <div id="AccountForm">
         <%! boolean login=false; %>
         <% login=false;
@@ -75,7 +81,7 @@
         </div>
     </header>
     <nav id="NavigationVar">
-        <span id="Movies" class="NavButton"><fmt:message key="movie"/></span>
+        <span id="Movies" class="NavButton" onclick="move_to_movie()"><fmt:message key="movie"/></span>
         <span id="Tickets" class="NavButton" onclick=""><fmt:message key="ticket"/></span>
         <span id="Snacks" class="NavButton" onclick="move_to_snack()"><fmt:message key="snack"/></span>
         <span id="Events" class="NavButton"><fmt:message key="event"/></span>
