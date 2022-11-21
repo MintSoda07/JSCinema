@@ -15,10 +15,18 @@
 </head>
 <body>
 <%@ include file="/headers/NavHeader.jsp" %>
+   <div>
    <div id=event>이벤트 1</div>
+   </div>
+   <div>
     <div id=event>이벤트 2</div>
+    </div>
+    <div>
     <div id=event>이벤트 3</div>
+    </div>
+    <div>
     <div id=event>이벤트 4</div>
+    </div>
 </body>
 </html>
 </fmt:bundle>
