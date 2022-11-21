@@ -34,7 +34,7 @@
 		}else if(is_edit_enabled){
 			var input = confirm('수정하시겠습니까?')
 			if(input==true){
-				location.href=("snack_eidtPage.jsp?img="+clicked_id);	
+				location.href=("snack_editPage.jsp?img="+clicked_id);	
 			}else{
 				return;
 			}
