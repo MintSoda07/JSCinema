@@ -5,7 +5,6 @@
 <%@taglib prefix="sql" uri="http://java.sun.com/jstl/sql"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
 
-<%@ include file="/headers/Language_header.jsp"  %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,61 +12,41 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	String ID=request.getParameter("ID");
-	String NAME=request.getParameter("NAME");
-	String PWD=request.getParameter("PWD");
-	String EMAIL=request.getParameter("EMAIL");
-	String AGE=request.getParameter("AGE");
-	String TEL=request.getParameter("TELL");
-	int return_msg=0;
-	if(false){
-	}else if(ID.length()>20||ID.contains(" ")){
-		return_msg=1;
-	}else if(PWD.length()>20||PWD.contains(" ")){
-		return_msg=2;
-	}else{
-		     Connection con = null;
-		     PreparedStatement ps = null;
-		     ResultSet rs = null;
-		     try {
-		      Class.forName("oracle.jdbc.driver.OracleDriver");
-		      String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
-		      con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
-		      String sql = "SELECT ID,PWD,NAME,MANAGER FROM CUSTOMER ORDER BY ID";
-	
-		      ps = con.prepareStatement(sql);
-		      rs = ps.executeQuery();
-		      while (rs.next()) {
-		    	  if(rs.getString("ID").equals(ID) && rs.getString("PWD").equals(PWD)){
-		    		  login_success=true;
-		    		  session.setAttribute("UserID", ID);
-		    		  session.setAttribute("UserPWD", PWD);
-		    		  session.setAttribute("UserName", rs.getString("NAME"));
-		    		  if(rs.getString("MANAGER").equals("Y")){
-		    			  session.setAttribute("Manager", rs.getString("MANAGER"));
-		    		  }
-		    	  }
-		     }
-		 } catch (Exception e) {
-		 } finally {
-		  if (rs != null)  try { rs.close(); } catch (Exception e) {}
-		  if (ps != null) try { ps.close(); } catch (Exception e) {}  
-		  if (con != null) try { con.close(); } catch (Exception e) {}
-		  if(!login_success){
-			  return_msg=3;
-		  }else{
-			  response.sendRedirect("index.jsp");
-			  return;
-		  }
-	
+	<%
+	String ID = request.getParameter("ID");
+	String NAME = request.getParameter("NAME");
+	String PWD = request.getParameter("PASSWORD");
+	String EMAIL = request.getParameter("EMAIL");
+	String TEL = request.getParameter("tell");
+	Connection con = null;
+	PreparedStatement ps = null;
+	ResultSet rs = null;
+	try {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe";
+		con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
+		String sql = "INSERT INTO CUSTOMER(RRN,ID,PWD,NAME,TEL,POINT,EMAIL,MANAGER) VALUES(SIGNUP_SEQ.NEXTVAL,?,?,?,?,'0',?,'F')";
+
+		Blob img_blobData = con.createBlob();
+		ps = con.prepareStatement(sql);
+		ps.setString(1, ID);
+		ps.setString(2, PWD);
+		ps.setString(3, NAME);
+		ps.setString(4,TEL);
+		ps.setString(5,EMAIL);
+		int r = ps.executeUpdate();
+		response.sendRedirect("index.jsp");
+		if(true){
+			return;			
 		}
+
+	} catch (Exception e) {
+		throw(e);
+	} finally {
+		if (ps != null)try {ps.close();} catch (Exception e) {}
+		if (con != null)try {con.close();} catch (Exception e) {}
 	}
-		%>
-		<jsp:forward page="signIn.jsp">
-		<jsp:param name="Err_Code" value="<%=return_msg%>"/>
-		</jsp:forward>
-		
+%>
 		
 </body>
 </html>

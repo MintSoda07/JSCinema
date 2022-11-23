@@ -44,17 +44,17 @@
                		out.print("<label id=\"ERR\">"+"로그인 정보가 전달되는 과정에 오류가 발생했습니다."+"</label>");
                		break;
                	case 1:
-               		out.print("<label id=\"ERR\">"+"이메일은 40자 이내여야 하며 공백이 포함될 수 없습니다."+"</label>");
+               		out.print("<label id=\"ERR\">"+"이메일 혹은 아이디 에는 공백이 포함될 수 없습니다."+"</label>");
                		break;
                	case 2:
                		out.print("<label id=\"ERR\">"+"비밀번호는 40자 이내여야 하며 공백이 포함될 수 없습니다."+"</label>");
                		break;
                	case 3:
-               		out.print("<label id=\"ERR\">"+"아이디와 비밀번호가 일치하지 않습니다."+"</label>");
+               		out.print("<label id=\"ERR\">"+"이메일 혹은 아이디와 비밀번호가 일치하지 않습니다."+"</label>");
                		break;
                	}
             }catch(Exception e){
-            	out.print("<span style=\"padding:3px;\">이메일과 비밀번호를 입력해 주세요.</span>");
+            	out.print("<span style=\"padding:3px;\">이메일 혹은 아이디와 비밀번호를 입력해 주세요.</span>");
             }
            	
             

@@ -20,9 +20,9 @@
 	int return_msg=0;
 	if(ID==null || PWD == null){
 		return_msg=0;
-	}else if(ID.length()>20||ID.contains(" ")){
+	}else if(ID.contains(" ")){
 		return_msg=1;
-	}else if(PWD.length()>20||PWD.contains(" ")){
+	}else if(PWD.length()>40||PWD.contains(" ")){
 		return_msg=2;
 	}else{
 		     Connection con = null;
@@ -32,12 +32,12 @@
 		      Class.forName("oracle.jdbc.driver.OracleDriver");
 		      String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe"; 
 		      con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
-		      String sql = "SELECT ID,PWD,NAME,MANAGER FROM CUSTOMER ORDER BY ID";
+		      String sql = "SELECT ID,EMAIL,PWD,NAME,MANAGER FROM CUSTOMER ORDER BY ID";
 	
 		      ps = con.prepareStatement(sql);
 		      rs = ps.executeQuery();
 		      while (rs.next()) {
-		    	  if(rs.getString("ID").equals(ID) && rs.getString("PWD").equals(PWD)){
+		    	  if((rs.getString("ID").equals(ID)||rs.getString("EMAIL").equals(ID))&& rs.getString("PWD").equals(PWD)){
 		    		  login_success=true;
 		    		  session.setAttribute("UserID", ID);
 		    		  session.setAttribute("UserPWD", PWD);

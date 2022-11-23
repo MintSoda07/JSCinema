@@ -28,7 +28,6 @@
     	var pwd=$("#pwd").val();
     	var al=$("#alert");
     	var pwd_check=$("#pwd_check").val();
-    	alert(pwd+","+pwd_check);
     	var name=$("#name");
     	if(name.val().length>20){
     		$("#name").css("border","red solid 1px")
@@ -47,9 +46,30 @@
     		$("#ID_check").text("아이디가 너무 깁니다. 20자 이내로 작성해야 합니다.");
     		isValidate=false;
     	}else{
-    		$("#ID").css("border","black solid 1px");
-    		$("#ID_check").text("");
+    		if(id.val().match(/\s/g)){
+        		$("#ID").css("border","red solid 1px")
+        		$("#ID").focus();
+        		$("#ID_check").text("아이디에 공백이 포함될 수 없습니다.");
+        		isValidate=false;
+        	}else{
+        		$("#ID").css("border","black solid 1px");
+        		$("#ID_check").text("");
+        	}
     	}
+    	
+    	
+    	
+    	var id=$("#EMAIL");
+    	if(id.val().indexOf('@')==-1||id.val().length>40){
+    		$("#EMAIL").css("border","red solid 1px")
+    		$("#EMAIL").focus();
+    		$("#email_check").text("@이 포함된 이메일을 입력해 주세요. 20자 이내로 작성해야 합니다.");
+    		isValidate=false;
+    	}else{
+    		$("#EMAIL").css("border","black solid 1px");
+    		$("#email_check").text("");
+    	}
+    	
     	if(pwd===pwd_check){
     		$("#pwd_check").css("border","black solid 1px");
     		al.text("");
@@ -57,6 +77,14 @@
     		$("#pwd_check").css("border","red solid 1px");
     		al.text("비밀번호가 다릅니다. 다시 입력해 주세요.");
     		isValidate=false;
+    	}
+    	if($("#name").val()==""||$("#ID").val()==""||$("#EMAIL").val()==""||$("#TEL").val()==""||$("#pwd").val()==""||$("#pwd_check").val()==""){
+    		al.text("입력하지 않은 항목이 있습니다. 모든 항목에 값을 입력해주세요.");
+    		isValidate=false;
+    	}else{
+    		if(isValidate==true){
+        		$('#foorm').submit();
+        	}
     	}
     }
     </script>
@@ -74,7 +102,7 @@
     	<div class="signup">
     	<h2>회원 가입</h2>
     	<hr>
-        <form action="index.jsp" id="foorm">
+        <form action="SignUpCheck_Page.jsp" id="foorm">
             <label><fmt:message key="name"/></label> 
             <input type="text" id="name" name="NAME" required="required" placeholder="<fmt:message key="name.input"/>">
             <p id="name_check" style="color:red; font-weight: bold;"></p>
@@ -82,10 +110,10 @@
             <input type="text" id="ID" name="ID" required="required" placeholder="<fmt:message key="loginPage.alert.id"/>">
             <p id="ID_check" style="color:red; font-weight: bold;"></p>
             <label><fmt:message key="email"/></label>
-            <input type="email" name="EMAIL" required="required" placeholder="<fmt:message key="email.input"/>">
+            <input type="email" id="EMAIL" name="EMAIL" required="required" placeholder="<fmt:message key="email.input"/>">
             <p id="email_check" style="color:red; font-weight: bold;"></p>
             <label>전화번호</label>
-            <input type="text" name="tell" required="required" placeholder="010-1234-5678">
+            <input type="text" name="tell" required="required" placeholder="010-1234-5678" id="TEL">
             <p id="tell_check" style="color:red; font-weight: bold;"></p>
             <label><fmt:message key="pwd"/></label>
             <input type="password" name="PASSWORD" required="required" id="pwd" placeholder="<fmt:message key="pwd.input"/>">
