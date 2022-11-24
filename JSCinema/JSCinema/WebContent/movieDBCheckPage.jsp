@@ -86,7 +86,7 @@
 		      ps.setString(5, file_name); 
 		      ps.setString(6, genre);
 		      int r = ps.executeUpdate();
-		      response.sendRedirect("MovieList_Page.jsp");
+		      response.sendRedirect("movieTimeSetting.jsp?img="+file_name);
 			  return;
 			  } catch (Exception e) {
 				  out.print(e.getClass().getName());

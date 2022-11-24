@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="EUC-KR"> <!--  아직 정상적으로 동작하지 않음. snackDBCheckPage_Modified 수정 필요. -->
-<title>스낵 추가</title>
+<title><fmt:message key="title"/></title>
 <link rel="stylesheet" href="style/Addition_page.css">
     <script src="script/jquery-3.6.1.js"></script>
 <script>

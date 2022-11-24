@@ -12,7 +12,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>영화 상세정보</title>
+<title><fmt:message key="title"/></title>
 <link rel="stylesheet" href="style/Addition_page.css">
     <script src="script/jquery-3.6.1.js"></script>
 </head>

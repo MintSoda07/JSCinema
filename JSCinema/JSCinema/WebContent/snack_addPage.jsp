@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>스낵 추가</title>
+<title><fmt:message key="title"/></title>
 <link rel="stylesheet" href="style/Addition_page.css">
     <script src="script/jquery-3.6.1.js"></script>
 <script>

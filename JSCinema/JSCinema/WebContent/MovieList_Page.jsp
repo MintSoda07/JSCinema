@@ -16,7 +16,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Insert title here</title>
+<title><fmt:message key="title"/></title>
 <link rel="stylesheet" href="style/ItemList_Page.css?ver=2" type="text/css" >
 <script src="script/jquery-3.6.1.js"></script>
 <script>

@@ -30,7 +30,7 @@
 <form action="movieDBCheckPage.jsp" method="post" enctype="multipart/form-data">
 <div class="content_container">
 
-<h1>새로운 영화 추가 중</h1>
+<h1><fmt:message key="title"/></h1>
 <div class="add_page">
  	
     <div class="add_img"> 
