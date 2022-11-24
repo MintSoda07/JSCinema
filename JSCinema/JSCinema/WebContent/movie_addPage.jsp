@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>영화 추가</title>
+<title><fmt:message key="title"/></title>
 <link rel="stylesheet" href="style/Addition_page.css">
     <script src="script/jquery-3.6.1.js"></script>
 <script>
@@ -30,7 +30,7 @@
 <form action="movieDBCheckPage.jsp" method="post" enctype="multipart/form-data">
 <div class="content_container">
 
-<h1><fmt:message key="title"/></h1>
+<h1>새로운 영화 추가 중</h1>
 <div class="add_page">
  	
     <div class="add_img"> 
