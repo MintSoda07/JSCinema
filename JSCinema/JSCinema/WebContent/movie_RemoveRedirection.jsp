@@ -23,7 +23,7 @@ try {
  String sql = "DELETE FROM MOVIE WHERE IMG_PATH='"+request.getParameter("img")+"'";
 
  ps = con.prepareStatement(sql);
- rs = ps.executeQuery();
+ int r = ps.executeUpdate();
  File f = new File("C:\\Users\\USER\\Documents\\GitHub\\JSCinema\\JSCinema\\JSCinema\\WebContent\\upload\\"+request.getParameter("img")); // 파일 객체생성
  if( f.exists()) f.delete();
  while (rs.next()){

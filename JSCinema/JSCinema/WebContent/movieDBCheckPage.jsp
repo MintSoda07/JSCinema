@@ -89,8 +89,6 @@
 		      response.sendRedirect("movieTimeSetting.jsp?img="+file_name);
 			  return;
 			  } catch (Exception e) {
-				  out.print(e.getClass().getName());
-				  out.print(title+","+simple_info+","+info+","+file_name);
 				  
 		 	  } finally {
 		  	

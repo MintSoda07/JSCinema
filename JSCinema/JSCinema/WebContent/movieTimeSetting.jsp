@@ -106,6 +106,9 @@
 		refresh_all();
 	}
 	window.onload = function(){
+		if(<%=request.getParameter("alert")%>){
+			alert("업로드 도중 오류가 발생했습니다.");
+		}
 		refresh_all()
 	}
 	var act_btns=[];
@@ -114,7 +117,7 @@
 	}
 	var time_list = [];
 	$(document).ready(function() {
-	    $("button").on('click', function(event) {
+	    $(".btn_container button").on('click', function(event) {
 	    	var css_target=$(event.target);
 	        if(time_list.indexOf(event.target.id)==-1){
 	        	time_list.push(event.target.id);
@@ -137,6 +140,23 @@
 		for(var i=0;i<15;i++){
 			str=str+act_btns[i];
 		}
+	}
+	function submit_btn_clicked(){
+		monthtxt=month;
+		daytxt=day;
+		if(month<10){
+			monthtxt="0"+month;
+		}
+		if(day<10){
+			daytxt="0"+day;
+		}
+		txt=year+"-"+monthtxt+"-"+daytxt;
+		$("#input_date").val(txt);
+		$("#input_code").val(str);
+		$("#data_form").submit();
+	}
+	function back_btn(){
+		location.href="MovieList_Page.jsp";
 	}
 	
 </script>
@@ -169,15 +189,13 @@ try {
 	 path=rs.getString("IMG_PATH");
  }
 } catch (Exception e) {
-	out.print(request.getParameter("img"));
-	out.print(sql_date.toString());
 } finally {
 }
 if (rs != null)  try { rs.close(); } catch (Exception e) {}
 if (ps != null) try { ps.close(); } catch (Exception e) {}  
 if (con != null) try { con.close(); } catch (Exception e) {}
 %>
-    <h1 id="movie_title">영화 제목</h1>
+    <h1 id="movie_title"><%=name %></h1>
     <div id="container">
    
         <div id="item">
@@ -197,9 +215,19 @@ if (con != null) try { con.close(); } catch (Exception e) {}
              <!-- <div id ="time">18시 55분 </div>  -->
         </div>
         
-       
+       	
         </div> 
-    </div>
+        <div style="justify-content: flex; display: center; margin:40px;">
+        <button id="submitBtn" onclick="submit_btn_clicked()" style="margin-left:40%;">업로드</button>
+        <button id="submitBtn" onclick="back_btn()" style="margin-left:40%;">완료- 목록으로</button>
+        </div>
+        
+    <form action="movieTimeSetting_datebase.jsp" style="display: hidden;" id="data_form">
+    	<input type="hidden" name="date" value="" id="input_date">
+    	<input type="hidden" name="code" value="" id="input_code">
+    	<input type="hidden" name="movie" value="<%=name %>" id="title">
+    	<input type="hidden" name="movie" value="<%=path %>" id="IMG_PATH">
+    </form>
 </body>
 </html>
 </fmt:bundle>

@@ -23,7 +23,7 @@ h1{
 #month{
     margin-top: 20px;
 }
-button{
+.btn_container button{
     width: 140px;
     height: 90px;
     color:white;
@@ -35,6 +35,7 @@ button{
 }
 button:hover{
 	background-color: gray;
+	color:black;
 }
 body{
 	margin:0px;
@@ -80,4 +81,18 @@ p{
 }
 .activated{
 	background-color: #ffeb37;
+}
+#submitBtn{
+	width: 340px;
+    height: 90px;
+    color:white;
+    background-color: #303030;
+    border: 2px solid gray;
+    font-size:30px;
+    font-weight: bold;
+    transition: ease-in-out all 200ms;
+}
+#submitBtn:hover{
+	background-color: white;
+	color:black;
 }

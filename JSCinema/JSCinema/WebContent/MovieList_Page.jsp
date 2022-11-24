@@ -17,7 +17,7 @@
 <head>
 <meta charset="EUC-KR">
 <title><fmt:message key="title"/></title>
-<link rel="stylesheet" href="style/ItemList_Page.css?ver=2" type="text/css" >
+<link rel="stylesheet" href="style/ItemList_Page.css?ver=3" type="text/css" >
 <script src="script/jquery-3.6.1.js"></script>
 <script>
 	var is_remove_enabled=false;
@@ -150,7 +150,6 @@ while(rs.next()){
 			"<div class=\"removeItem\">삭제하기</div>"+"</div>" ); //
 }
 } catch (Exception e) {
-	out.print(e);
 } finally {
 
 if (rs != null)  try { rs.close(); } catch (Exception e) {}
