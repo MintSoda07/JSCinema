@@ -17,10 +17,10 @@
  <%@ include file="/headers/NavHeader.jsp" %>
 <h1>고객센터</h1>
 
-    <div id="search">
-        <input type="text" placeholder="검색">
-        <button>검색</button>
-    </div>
+<!--     <div id="search"> -->
+<!--        <input type="text" placeholder="검색"> -->
+<!--         <button>검색</button> -->
+<!--     </div> -->
 
     <h2>예매 오류가 발생했습니다</h2>
     <div id="questions">

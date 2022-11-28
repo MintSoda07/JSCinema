@@ -17,8 +17,11 @@
     function move_to_movie() {
 		location.href="MovieList_Page.jsp";
 	}
-    	function move_to_snack() {
+    function move_to_snack() {
     		location.href="SnackList_Page.jsp";
+		}
+    function move_to_Service() {
+    		location.href="Main_Service_Center.jsp";
 		}
     </script>
 </head>
@@ -85,7 +88,7 @@
         <span id="Tickets" class="NavButton" onclick=""><fmt:message key="ticket"/></span>
         <span id="Snacks" class="NavButton" onclick="move_to_snack()"><fmt:message key="snack"/></span>
         <span id="Events" class="NavButton"><fmt:message key="event"/></span>
-        <span id="Supports" class="NavButton"><fmt:message key="support"/></span>
+        <span id="Supports" class="NavButton"onclick="move_to_Service()"><fmt:message key="support"/></span>
     </nav>
 </body>
 </html>
