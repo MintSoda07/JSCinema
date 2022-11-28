@@ -1,0 +1,36 @@
+#container{
+    display : flex;
+    justify-content: center;
+    align-items : center;
+  }
+  
+  #help{
+      width: 1000px;
+      height: 770px;
+      background-color: white;
+  }
+ #information{
+	width:100%;
+	font-size:28px;
+	border:none;
+}
+#QnA{
+    font-weight: bold;
+    margin-left: 450px;
+    font-size: xx-large;
+}
+#submit{
+	padding-left:20px;
+	padding-right:20px;
+	font-size:20px;
+	font-weight: bold;
+	background-color: black;
+	color:white;
+}
+#submit:hover{
+	background: gray;
+	color:balck;
+}
+#title{
+	border:none;
+}
