@@ -1,18 +1,20 @@
 th,td{
     text-align: center;
+    color:white;
+    background-color: gray;
+    width:150px;
 }
 table{
-    margin-left: 300px;
+    margin-left: 13%;
 }
 #seat{
-    justify-content: center;
     height: 50px;
-    border:  1px solid;
-    text-align: center;
+    text-align: left;
     font-size: large;
-    background-color: gray;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     display: flex;
+    padding-left:40px;
+    color:white
 
 }
 #screen{
@@ -20,14 +22,27 @@ table{
     justify-content: center;
     height: 50px;
     margin-bottom: 50px;
-    border:  1px solid;
     font-size: large;
     background-color: gray;
+    color:white;
+    padding-top:20px;
 }
-button{
-    width: 100px;
+td button{
+    width: 150px;
     height: 100px;
+    background-color: gray;
+	color:white;
+	font-size:24px;
+    font-weight: bold;
+    transition: ease-in-out all 200ms;
+}
+td button:hover{
+    background-color: white;
+	color:black;
+	font-size:24px;
+    font-weight: bold;
 }
 body{
     background: black;
+    margin:0px;
 }

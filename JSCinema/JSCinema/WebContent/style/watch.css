@@ -96,3 +96,20 @@ p{
 	background-color: white;
 	color:black;
 }
+.price{
+	background: gray;
+	color:black;
+	padding:4px;
+	font-size: 18px;
+}
+form span{
+	color:red;
+	font-size:24px;
+}
+#submit_btn{
+	transition: ease-in-out all 200ms;
+	cursor: pointer;
+}
+#submit_btn:hover{
+	color:yellow;
+}

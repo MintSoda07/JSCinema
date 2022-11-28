@@ -17,7 +17,7 @@
 <head>
 <meta charset="EUC-KR">
 <title><fmt:message key="title"/></title>
-<link rel="stylesheet" href="style/ItemList_Page.css?ver=3" type="text/css" >
+<link rel="stylesheet" href="style/ItemList_Page.css?ver=4" type="text/css" >
 <script src="script/jquery-3.6.1.js"></script>
 <script>
 	var is_remove_enabled=false;

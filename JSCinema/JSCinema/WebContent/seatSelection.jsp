@@ -13,10 +13,10 @@
 <head>
 <meta charset="EUC-KR">
 <title>좌석배치도</title>
-<link rel="stylesheet" href="style/seatSelection.css">
+<link rel="stylesheet" href="style/seatSelection.css?ver=3">
 </head>
 <body>
-    <div id="seat">좌석배치도</div>
+    <div id="seat"><h1>좌석배치도</h1></div><hr>
     <div id="screen">스크린</div>
     <table border="1">
        <tr>

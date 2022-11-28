@@ -82,7 +82,7 @@
     </header>
     <nav id="NavigationVar">
         <span id="Movies" class="NavButton" onclick="move_to_movie()"><fmt:message key="movie"/></span>
-        <span id="Tickets" class="NavButton" onclick=""><fmt:message key="ticket"/></span>
+        <span id="Tickets" class="NavButton" onclick="move_to_movie()"><fmt:message key="ticket"/></span>
         <span id="Snacks" class="NavButton" onclick="move_to_snack()"><fmt:message key="snack"/></span>
         <span id="Events" class="NavButton"><fmt:message key="event"/></span>
         <span id="Supports" class="NavButton"><fmt:message key="support"/></span>

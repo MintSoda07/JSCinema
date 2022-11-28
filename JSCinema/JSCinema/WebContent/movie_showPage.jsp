@@ -13,7 +13,7 @@
 <head>
 <meta charset="EUC-KR">
 <title><fmt:message key="title"/></title>
-<link rel="stylesheet" href="style/Addition_page.css">
+<link rel="stylesheet" href="style/Addition_page.css?ver=2">
     <script src="script/jquery-3.6.1.js"></script>
 </head>
 <body style="background-color:  black;">
@@ -58,11 +58,11 @@ if (con != null) try { con.close(); } catch (Exception e) {}
 <div class="add_page" style="margin-top: 25px; padding-top:35px; padding-bottom:35px; background-color: #121212;">
  	
     <div class="add_img"> 
-    <img alt="" src="<%=default_Path+path%>" id="img_preview" style="border: 5px double white;"><button id="ticket">예매하기</button>
+    <img alt="" src="<%=default_Path+path%>" id="img_preview" style="border: 5px double white;"><button id="ticketing" class="ticket_btn" onclick="">예매하기</button>
     </div>   
     
     <div class="add_items" style="margin-left:30px;">
-    	<div class="inputbox" style="font-size: 50px; margin-top:0px; color:white;" margin-bottom:0px;><p id="snack_title" style="margin-top:0px;"><%=name%></p></div>
+    	<div class="inputbox" style="font-size: 50px; margin-top:0px; color:white; margin-bottom:0px;"><p id="snack_title" style="margin-top:0px;"><%=name%></p></div>
     	<div class="inputbox" style="font-size: 30px; margin-top:0px; color:yellow;"><p id="snack_price"><%= (sql_date.toString()+"일 업로드") %></p></div>
     	<hr>
     	<div class="inputbox" style="font-size: 20px; margin-top:15px; color:white;"><p id="snack_information" ><%=info%></p></div>

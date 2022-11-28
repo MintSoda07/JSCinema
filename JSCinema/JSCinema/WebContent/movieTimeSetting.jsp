@@ -225,7 +225,7 @@ if (con != null) try { con.close(); } catch (Exception e) {}
     <form action="movieTimeSetting_datebase.jsp" style="display: hidden;" id="data_form">
     	<input type="hidden" name="date" value="" id="input_date">
     	<input type="hidden" name="code" value="" id="input_code">
-    	<input type="hidden" name="movie" value="<%=name %>" id="title">
+    	<input type="hidden" name="title" value="<%=name %>" id="title">
     	<input type="hidden" name="movie" value="<%=path %>" id="IMG_PATH">
     </form>
 </body>

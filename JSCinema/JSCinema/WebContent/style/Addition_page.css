@@ -62,10 +62,18 @@
 	background: gray;
 	color:balck;
 }
-#ticket{
+.ticket_btn{
+	color:white;
 	background-color:black;
 	width:100%;
 	height:40px;
-	color:white;
-	transition:all ease-in 300ms;
+	border: white 2px double;
+	font-weight: bold;
+	font-size: 20px;
+	transition: ease-in-out all 200ms;
+	cursor: pointer;
+}
+.ticket_btn:hover{
+	border: yellow 2px double;
+	color:yellow;
 }
