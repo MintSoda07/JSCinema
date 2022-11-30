@@ -8,6 +8,10 @@
     <meta name="viewport" content="width=], initial-scale=1.0">
     <link rel="stylesheet" href="style/purchase_Page.css">
     <title>결제 창</title>
+    <script src="script/jquery-3.6.1.js"></script>
+    <script>
+    
+    </script>
 </head>
 <body>
     <div class="Personal_Info">

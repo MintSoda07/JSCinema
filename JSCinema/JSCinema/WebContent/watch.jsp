@@ -13,7 +13,7 @@
 <head>
 <%
 java.sql.Date sql_date=null;
-String name="엣지 오브 투모로우"; //request.getParameter("name")
+String name="마션";//request.getParameter("name");
 String mDate="1972-11-21";
 String time="00:00";
 String[] Date_list={};
@@ -209,9 +209,9 @@ if (con != null) try { con.close(); } catch (Exception e) {}
     	<input type="hidden" name="date" value="" id="input_date">
     	<input type="hidden" name="time" value="" id="input_time">
     	<input type="hidden" name="title" value="<%=name %>" id="title">
-    	<span>어린이(12세 미만)</span><input type="number" name="child" value="0" id=child class="price">
-    	<span>학생(12세 이상)</span><input type="number" name="student" value="0" id=student class="price">
-    	<span>성인</span><input type="number" name="normal" value="0" id=normal class="price">
+    	<span>어린이(12세 미만)</span><input type="number" name="child" value="0" id="child" class="price">
+    	<span>학생(12세 이상)</span><input type="number" name="student" value="0" id="student" class="price">
+    	<span>성인</span><input type="number" name="normal" value="0" id="normal" class="price">
     </form>
     	<p id="price_value" style="color:yellow;font-szie:24px;"></p>
         </div>

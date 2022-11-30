@@ -21,8 +21,8 @@
 <%@ include file="/headers/NavHeader.jsp"  %>
 <div class="content">
 <div class="content_container">
+<%!String name="err"; %>
 <%
-String name="err";
 String info="err";
 String path="";
 java.sql.Date sql_date=null;
@@ -58,7 +58,7 @@ if (con != null) try { con.close(); } catch (Exception e) {}
 <div class="add_page" style="margin-top: 25px; padding-top:35px; padding-bottom:35px; background-color: #121212;">
  	
     <div class="add_img"> 
-    <img alt="" src="<%=default_Path+path%>" id="img_preview" style="border: 5px double white;"><button id="ticketing" class="ticket_btn" onclick="">예매하기</button>
+    <img alt="" src="<%=default_Path+path%>" id="img_preview" style="border: 5px double white;"><button id="ticketing" class="ticket_btn" onclick="goto_ticket()">예매하기</button>
     </div>   
     
     <div class="add_items" style="margin-left:30px;">
@@ -68,7 +68,22 @@ if (con != null) try { con.close(); } catch (Exception e) {}
     	<div class="inputbox" style="font-size: 20px; margin-top:15px; color:white;"><p id="snack_information" ><%=info%></p></div>
     	
     </div>
-   
+   <script>
+    	function goto_ticket(){
+    		if(<%
+    				if(session.getAttribute("UserID")!=null){
+    					out.print("true");
+    				}else{
+    					out.print("false");
+    				}
+    		%>){
+    			location.href=("watch.jsp?name="+"<%=name%>");	
+    			}else{
+    				alert("예매를 위해 로그인 창으로 이동합니다.");
+    				location.href=("signIn.jsp");
+    			}
+    		}
+    </script>
     
 
 
