@@ -165,3 +165,12 @@ form>input:hover{
 #signOut:hover{
 	color:#ff8000;
 }
+.first_one{
+	color:yellow;
+	font-size:34px;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+	top:-70%;
+	background-color: #242424;
+}

@@ -60,7 +60,7 @@ function btn_clicked(btn_id){
 } 
 window.name = "SeatForm";
 function doSubmit(){
-	$("#seat_data").text(act_btns);
+	$("#seat_data").val(act_btns);
 	$("#data_form").submit();
 }
 </script>

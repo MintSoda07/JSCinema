@@ -23,16 +23,20 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		String url = "jdbc:oracle:thin:@192.168.142.10:1521:xe";
 		con = DriverManager.getConnection(url, "JSC", "wpdldptmtlspak");
-		String sql = "INSERT INTO TICKET(MOVIE_NAME,CUSTOMER_ID,CHILD,STUDENT,NORMAL,MOVIE_DATE,TIME_DATE) VALUES(?,?,?,?,?,?,?)";
-		ps.setString(0, request.getParameter("title"));
-		ps.setString(1, session.getAttribute("UserID").toString());
-		ps.setInt(2,Integer.parseInt(request.getParameter("child")));
-		ps.setInt(3,Integer.parseInt(request.getParameter("student")));
-		ps.setInt(4,Integer.parseInt(request.getParameter("normal")));
-		ps.setString(5,request.getParameter("date"));
-		ps.setString(6,request.getParameter("seats"));
+		String sql = "INSERT INTO TICKET(MOVIE_NAME,CUSTOMER_ID,CHILD,STUDENT,NORMAL,MOVIE_DATE,SEAT_DATA,TIME_DATE) VALUES(?,?,?,?,?,?,?)";
 		ps = con.prepareStatement(sql);
+		ps.setString(1, request.getParameter("title"));
+		ps.setString(2, session.getAttribute("UserID").toString());
+		ps.setInt(3,Integer.parseInt(request.getParameter("child")));
+		ps.setInt(4,Integer.parseInt(request.getParameter("student")));
+		ps.setInt(5,Integer.parseInt(request.getParameter("normal")));
+		ps.setString(6,request.getParameter("date"));
+		ps.setString(7,request.getParameter("seats"));;
+		ps.setString(8,request.getParameter("time"));;
 		int r = ps.executeUpdate();
+		String sql2 = "UPDATE MOVIE SET TICKET_SOLD = (TICKET_SOLD+1) WHERE NAME='"+request.getParameter("title")+"'";
+		ps = con.prepareStatement(sql2);
+		int r2 = ps.executeUpdate();
 		response.sendRedirect("index.jsp");
 		if(true){
 			return;			
